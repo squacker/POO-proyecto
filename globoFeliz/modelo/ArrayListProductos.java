@@ -1,0 +1,178 @@
+/*
+Clase: ArrayListinventario
+
+(Clase Arreglo Principal)
+
+Autor: Fernando Cordero 
+Version: 1.0
+*/
+
+package globoFeliz.modelo;
+
+import globoFeliz.modelo.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ArrayListProductos {
+	
+
+// ATRIBUTOS 
+
+	private ArrayList <Producto> inventario = new ArrayList <Producto> ();
+	private Scanner lector = new Scanner (System.in);
+
+
+
+// METODOS (CRUD)
+
+	// CREATE
+
+	public Producto leerDatosProducto () {
+
+		Producto productoNuevo = new Producto ();
+
+		System.out.println ("\nIngrese los siguientes datos del producto: ");
+
+		System.out.print ("\nNombre: ");
+		productoNuevo.setNombreProducto(lector.nextLine());
+
+
+		System.out.print ("\nDescripción: ");
+		productoNuevo.setDescripcionProducto(lector.nextLine());
+
+
+		System.out.print ("\nPrecio: ");
+		productoNuevo.setPrecioProducto(lector.nextFloat());
+
+
+		System.out.print ("\nExistencias: ");
+		productoNuevo.setExistenciasProducto(lector.nextInt());
+
+		return productoNuevo;
+
+	}
+
+	public boolean agregarProducto (Producto productoNuevo) {
+
+		return inventario.add(productoNuevo);
+	}
+
+
+	// READ
+
+	public int buscarProducto (String id) {
+
+		if (inventario.size() <= 0) {
+
+			return -1;
+
+		} else {
+
+			int contador = 0;
+			boolean encontrado = false;
+
+
+			while ( (contador < inventario.size()) && !encontrado ) {
+
+				String idArreglo = inventario.get(contador).getIdProducto();
+
+				if (!(id.equals(idArreglo))) {
+
+					contador++;
+
+				} else {
+
+					encontrado = true;
+				}
+			}
+
+			if(encontrado){
+
+				return contador;
+
+			} else {
+			
+				return -1;
+
+			}
+		}
+	}
+
+	public Producto getProducto (int posicion) {
+
+		return inventario.get(posicion);
+	}
+
+	public void escribir () {
+
+		String texto;
+		Producto productoEscrito;
+
+		for (int i = 0; i < inventario.size(); i ++){
+		
+			productoEscrito = inventario.get(i);
+
+			texto = "\nID: " + productoEscrito.getIdProducto() + "\nNombre: " + productoEscrito.getNombreProducto() + "\nDescripción: " + productoEscrito.getDescripcionProducto() + "\nPrecio: " + productoEscrito.getPrecioProducto() + "\nExistencias: " + productoEscrito.getExistenciasProducto();
+			
+			System.out.println(texto);
+		}
+	}
+
+
+	// UPDATE
+
+	public boolean remplazarProducto (String id, Producto productoNuevo) {
+
+		if (inventario.size() <= 0) {
+
+			return false;
+		
+		} else {
+
+			int posicion = buscarProducto(id);
+
+			if (posicion == -1) {
+
+				return false;
+			
+			} else {
+
+				Producto remplazo = inventario.set(posicion, productoNuevo);
+
+				return remplazo == null;
+			}
+
+		}
+	}
+
+
+	// DELETE
+
+	public boolean eliminarProducto (String id) {
+
+		if (inventario.size() <= 0) {
+
+			return false;
+
+		} else {
+
+			int contador = buscarProducto (id);
+
+			if (contador > -1) {
+
+				Producto productoBorrado = inventario.remove(contador);
+
+				return productoBorrado != null;
+
+			} else {
+
+				return false;
+
+			}
+
+		}
+
+	}
+
+
+}

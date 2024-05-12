@@ -1,6 +1,9 @@
 /* 
 Clase: Identificador
-(Esta clase sirve para generar un id aleatorio de 3 digitos) 
+(Esta clase sirve para generar un id aleatorio de 3 digitos,
+es usada para generar identificadores para las clases principales) 
+
+(Clase Auxiliar)
 
 Autor: Fernando Cordero
 Version: 1.0
@@ -49,7 +52,7 @@ public class Identificador {
 
     private void setId() {
 
-        this.id = getTipoId() + "-" + getNumId();
+        this.id = getTipoId()  + getNumId();
     }
 
 // GETTERS

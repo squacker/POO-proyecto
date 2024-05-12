@@ -1,5 +1,8 @@
 /*
-Modelo: Cliente
+Clase: Cliente
+
+(Clase Principal)
+
 Autor: Fernando Cordero 
 Version: 1.0
 */
@@ -13,9 +16,9 @@ public class Producto {
 
 // ATRIBUTOS
 
-	private int existenciasProducto;
-
 	private String idProducto, nombreProducto, descripcionProducto;
+
+	private int existenciasProducto;
 
 	private float precioProducto;
 
@@ -101,7 +104,7 @@ public class Producto {
 
 	public static String generarIdProducto () {
 
-        Identificador id = new Identificador ("Prod");
+        Identificador id = new Identificador ("pr");
 
         return id.getId();
 	}
@@ -118,16 +121,17 @@ public class Producto {
 
 	}
 
+	public void restarExistencias (int cantidad) {
 
-
-	public static void main (String [] args) {
-
-		Producto produ = new Producto ("Paquete de Globos Amscan", "Globos de látex llenos de confeti de 12 pulgadas", 115.41f, 35);
-
-		System.out.println(produ.imprimirDatos());
-
-		
+		existenciasProducto = existenciasProducto - cantidad;
 	}
+
+	public void sumarExistencias (int cantidad) {
+
+		existenciasProducto = existenciasProducto + cantidad;
+	}
+
+
 
 
 }
