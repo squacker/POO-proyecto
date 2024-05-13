@@ -1,0 +1,10 @@
+
+Clase Producto
+
+    Sacer el metodo escribir de la clase arrayList y ponerlo en el IGU
+
+    Hacer Manejo de exepciones en el IGU
+
+    Implementar nivel maximo y minimo en la clase producto
+
+    Hacer que cada que se registre una venta se disminuya el producto del inventario

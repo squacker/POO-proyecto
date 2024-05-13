@@ -11,7 +11,7 @@ package globoFeliz.modelo;
 
 import globoFeliz.modelo.*;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 @SuppressWarnings("unused")
 public class ArrayListProductos {
@@ -20,38 +20,11 @@ public class ArrayListProductos {
 // ATRIBUTOS 
 
 	private ArrayList <Producto> inventario = new ArrayList <Producto> ();
-	private Scanner lector = new Scanner (System.in);
-
 
 
 // METODOS (CRUD)
 
 	// CREATE
-
-	public Producto leerDatosProducto () {
-
-		Producto productoNuevo = new Producto ();
-
-		System.out.println ("\nIngrese los siguientes datos del producto: ");
-
-		System.out.print ("\nNombre: ");
-		productoNuevo.setNombreProducto(lector.nextLine());
-
-
-		System.out.print ("\nDescripción: ");
-		productoNuevo.setDescripcionProducto(lector.nextLine());
-
-
-		System.out.print ("\nPrecio: ");
-		productoNuevo.setPrecioProducto(lector.nextFloat());
-
-
-		System.out.print ("\nExistencias: ");
-		productoNuevo.setExistenciasProducto(lector.nextInt());
-
-		return productoNuevo;
-
-	}
 
 	public boolean agregarProducto (Producto productoNuevo) {
 
