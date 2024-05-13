@@ -30,8 +30,6 @@ public class GestionInventario {
 
 // PRODUCTOS INICIALES
 
-		// // DATOS INICIALES
-
 		Producto productoPrueba = new Producto ("Paquete de Globos 0", "aaa", 115.41f, 35);
 
 		Producto productoPrueba1 = new Producto ("Paquete de Globos 1", "eee", 224.61f, 20);
@@ -50,20 +48,30 @@ public class GestionInventario {
 		inventario.agregarProducto(productoPrueba4);
 
 
+// CONTROLADOR DE MENU PRINCIPAL
+
 		do {
 
 			opcion = interfaz.menuInventario();
 
+			// SWITCH MENU
+
 			switch (opcion) {
 
-				case 1:
+
+				
+
+				case 1: // AGREGAR (CREATE)
 
 					productoNuevo = interfaz.leerDatosProducto();
 					inventario.agregarProducto(productoNuevo);
 					
 					break;
+
+
 				
-				case 2: 
+				
+				case 2: // REEMPLAZAR (UPDATE)
 
 					id = interfaz.leerIdProducto();
 
@@ -79,8 +87,10 @@ public class GestionInventario {
 					}
 
 					break;
+
+
 				
-				case 3: 
+				case 3: // MODIFICAR (UPDATE)
 
 					id = interfaz.leerIdProducto();
 
@@ -100,7 +110,7 @@ public class GestionInventario {
 
 						switch (opcionModificar) {
 
-							case 1:
+							case 1: // MODIFICAR NOMBRE
 								
 								nuevaCadena = interfaz.leerNombreNuevo();
 
@@ -108,7 +118,7 @@ public class GestionInventario {
 		
 								break;
 						
-							case 2:
+							case 2: // MODIFICAR PESCRIPCION
 								
 								nuevaCadena = interfaz.leerDescripcionNuevo();
 								
@@ -116,7 +126,7 @@ public class GestionInventario {
 		
 								break;	
 		
-							case 3:
+							case 3: // MODIFICAR PRECIO
 								
 								nuevoPrecio = interfaz.leerPrecioNuevo();
 								
@@ -124,7 +134,7 @@ public class GestionInventario {
 		
 								break;	
 		
-							case 4:
+							case 4: // MODIFICAR EXISTENCIAS
 								
 								nuevoExistencias = interfaz.leerExistenciasNuevo();
 								
@@ -132,6 +142,11 @@ public class GestionInventario {
 		
 								break;	
 							
+							
+							case 0: // CANCELAR
+
+								break;
+
 							default:
 								break;
 						}
@@ -140,7 +155,7 @@ public class GestionInventario {
 
 					break;
 				
-				case 4: 
+				case 4: // ELIMINAR (DELETE)
 
 					id = interfaz.leerIdProducto();
 
@@ -156,7 +171,7 @@ public class GestionInventario {
 
 					break;
 				
-				case 5:
+				case 5: // BUSCAR (READ)
 
 					id = interfaz.leerIdProducto();
 
@@ -175,14 +190,14 @@ public class GestionInventario {
 				
 					break;
 				
-				case 6: 
+				case 6: // LISTAR (READ) 
 				
-					inventario.escribir();
+					interfaz.escribirInventario(inventario);
 				
 					break;
 				
 				
-				case 0: 
+				case 0: // SALIR
 				
 					break;
 				

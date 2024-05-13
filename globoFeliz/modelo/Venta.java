@@ -9,9 +9,6 @@
 
 package globoFeliz.modelo;
 
-import globoFeliz.modelo.*;
-
-@SuppressWarnings("unused")
 public class Venta {
 
 // ATRIBUTOS

@@ -9,11 +9,9 @@ Version: 1.0
 
 package globoFeliz.modelo;
 
-import globoFeliz.modelo.*;
 import java.util.ArrayList;
 
 
-@SuppressWarnings("unused")
 public class ArrayListProductos {
 	
 
@@ -77,17 +75,9 @@ public class ArrayListProductos {
 		return inventario.get(posicion);
 	}
 
-	public void escribir () {
+	public int getTamaño () {
 
-		String texto;
-		Producto productoEscrito;
-
-		for (int i = 0; i < inventario.size(); i ++){
-		
-			productoEscrito = inventario.get(i);
-
-			System.out.println(productoEscrito.imprimirDatos());
-		}
+		return inventario.size();
 	}
 
 

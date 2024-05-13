@@ -1,5 +1,5 @@
 /*
-Clase: Cliente
+Modelo: Cliente
 
 (Clase Principal)
 
@@ -9,11 +9,12 @@ Version: 1.0
 
 package globoFeliz.modelo;
 
-import globoFeliz.modelo.*;
-
-@SuppressWarnings("unused")
 public class Producto {
 
+// CONSTANTES
+
+	public final int EXISTENCIAS_MINIMAS = 5;
+	public final int EXISTENCIAS_MAXIMAS = 50;
 
 // ATRIBUTOS
 
@@ -131,8 +132,5 @@ public class Producto {
 
 		existenciasProducto = existenciasProducto + cantidad;
 	}
-
-
-
 
 }

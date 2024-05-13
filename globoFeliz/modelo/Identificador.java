@@ -11,10 +11,8 @@ Version: 1.0
 
 package globoFeliz.modelo;
 
-import globoFeliz.modelo.*;
 import java.util.Random;
 
-@SuppressWarnings("unused")
 public class Identificador {
 
 

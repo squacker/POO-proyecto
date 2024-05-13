@@ -11,12 +11,10 @@ Version: 1.0
 
 package globoFeliz.modelo;
 
-import globoFeliz.modelo.*;
 import java.time.LocalDate; 
 import java.time.format.DateTimeFormatter;
 
 
-@SuppressWarnings("unused")
 public class Fecha {
 
 
