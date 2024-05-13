@@ -13,6 +13,7 @@ import globoFeliz.modelo.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+@SuppressWarnings("unused")
 public class ArrayListProductos {
 	
 
@@ -112,9 +113,7 @@ public class ArrayListProductos {
 		
 			productoEscrito = inventario.get(i);
 
-			texto = "\nID: " + productoEscrito.getIdProducto() + "\nNombre: " + productoEscrito.getNombreProducto() + "\nDescripción: " + productoEscrito.getDescripcionProducto() + "\nPrecio: " + productoEscrito.getPrecioProducto() + "\nExistencias: " + productoEscrito.getExistenciasProducto();
-			
-			System.out.println(texto);
+			System.out.println(productoEscrito.imprimirDatos());
 		}
 	}
 
@@ -143,6 +142,60 @@ public class ArrayListProductos {
 			}
 
 		}
+	}
+
+	public boolean modificarProducto (String id, int opcion, String modificaCadena, float modificaPrecio, int modificaExistencias) {
+		
+		if (inventario.size() <= 0) {
+
+			return false;
+		
+		} else {
+
+			int posicion = buscarProducto(id);
+
+			if (posicion == -1) {
+
+				return false;
+			
+			} else {
+
+				Producto productoModificado = inventario.get(posicion);
+
+				switch (opcion) {
+					case 1:
+						
+						 productoModificado.setNombreProducto(modificaCadena);
+
+						break;
+				
+					case 2:
+						
+						productoModificado.setDescripcionProducto(modificaCadena);;
+
+					    break;	
+
+					case 3:
+						
+						productoModificado.setPrecioProducto(modificaPrecio);;
+
+					    break;	
+
+					case 4:
+						
+						productoModificado.setExistenciasProducto(modificaExistencias);;
+
+					    break;	
+					
+					default:
+						break;
+				}
+
+				return true;
+				
+			}
+		}
+
 	}
 
 

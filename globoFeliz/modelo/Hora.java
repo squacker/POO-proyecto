@@ -16,6 +16,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 
+@SuppressWarnings("unused")
 public class Hora {
 
 // ATRIBUTOS

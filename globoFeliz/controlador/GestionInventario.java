@@ -10,7 +10,6 @@ Version: 1.0
 package globoFeliz.controlador;
 
 import globoFeliz.modelo.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -97,11 +96,95 @@ public class GestionInventario {
 					break;
 
 
+				
 				case 3:
 
+					System.out.printf("Introduce el id del producto que deseas modificar: ");
+					id = lector.nextLine();
+
+					if (inventario.buscarProducto(id) == -1) {
+
+						System.out.println("El id que ingresaste no existe");
+
+						break;
+
+					} else {
+
+						int opcionModificar;
+
+						String nuevaCadena;
+						float nuevoPrecio;
+						int nuevoExistencias;
+
+						System.out.printf("1. Nombre   2. Descripcion   3. Precio   4. Existencias\n\n¿Que dato deseas modificar?: ");
+						opcionModificar = lector.nextInt();
+						lector.nextLine();
+
+
+						switch (opcionModificar) {
+							case 1:
+								
+								System.out.printf("Ingresa nuevo nombre: ");
+								nuevaCadena = lector.nextLine();
+
+								
+								inventario.modificarProducto(id, opcionModificar, nuevaCadena, 0.0f, 0);
+		
+								break;
+						
+							case 2:
+								
+								System.out.printf("Ingresa nueva Descripcion: ");
+								nuevaCadena = lector.nextLine();
+
+								
+								inventario.modificarProducto(id, opcionModificar, nuevaCadena, 0.0f, 0);
+		
+								break;	
+		
+							case 3:
+								
+								System.out.printf("Ingresa nuevo Precio: ");
+								nuevoPrecio = lector.nextFloat();
+								
+								inventario.modificarProducto(id, opcionModificar, " ", nuevoPrecio, 0);
+		
+								break;	
+		
+							case 4:
+								
+								System.out.printf("Ingresa nuevas Existencias: ");
+								nuevoExistencias = lector.nextInt();
+								
+								inventario.modificarProducto(id, opcionModificar, " ", 0.0f, nuevoExistencias);
+		
+								break;	
+							
+							default:
+								break;
+						}
+
+						break;
+
+					}
 
 				case 4:
 
+					System.out.printf("Introduce el id del producto que deseas borrar: ");
+
+					id = lector.nextLine();
+
+					if (inventario.buscarProducto(id) == -1) {
+
+						System.out.println("El id que ingresaste no existe");
+
+					} else {
+
+						inventario.eliminarProducto(id);
+
+					}
+
+					break;
 
 				case 5:
 
@@ -111,7 +194,6 @@ public class GestionInventario {
 
 					int posicion = inventario.buscarProducto(id);
 					Producto productoEscrito = inventario.getProducto(posicion);
-
 
 					System.out.println(productoEscrito.imprimirDatos());
 
@@ -127,13 +209,15 @@ public class GestionInventario {
 					break;
 
 
-			}
+				default:
+					break;
+
+				}
 
 			} while (opcion != 0);
 		}
 
-
-
+		
 	}
 
 
