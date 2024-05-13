@@ -53,6 +53,7 @@ public class GestionInventario {
 		Producto productoNuevo;
 		String id;
 
+		@SuppressWarnings("resource")
 		Scanner lector = new Scanner (System.in);
 
 
