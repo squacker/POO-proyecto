@@ -10,8 +10,7 @@ public class Proveedor {
 
     //atributos
 
-    private String idProveedor, nombreProveedor, correoProveedor, direccionFiscal, rfcProveedor;
-    private int telefonoProveedor;
+    private String idProveedor, nombreProveedor, telefonoProveedor, correoProveedor, direccionFiscal, rfcProveedor;
 
     //Constructor 
     public Proveedor(){
@@ -21,7 +20,7 @@ public class Proveedor {
 
 	// Con parametros 
 
-	public Proveedor(String nombreProveedor, String correoProveedor, int telefonoProveedor, String direccionFiscal, String rfcProveedor ) {
+	public Proveedor(String nombreProveedor, String correoProveedor, String telefonoProveedor, String direccionFiscal, String rfcProveedor ) {
 
 		setIdProovedor();
 		setNombreProveedor(nombreProveedor);
@@ -46,7 +45,7 @@ public class Proveedor {
 
     }
 
-    public void setTelefonoproveedor(int telefonoProveedor){
+    public void setTelefonoproveedor(String telefonoProveedor){
 
 
         this.telefonoProveedor = telefonoProveedor; 
@@ -85,7 +84,7 @@ public class Proveedor {
 
     }
 
-    public int getTelefonoProveedor(){
+    public String getTelefonoProveedor(){
 
         return telefonoProveedor;
 
