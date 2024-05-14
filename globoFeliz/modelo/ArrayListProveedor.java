@@ -6,7 +6,7 @@ Version: 1.0
 
 package globoFeliz.modelo;
 
-import globoFeliz.modelo.*;
+
 import java.util.ArrayList;
 
 public class ArrayListProveedor{
