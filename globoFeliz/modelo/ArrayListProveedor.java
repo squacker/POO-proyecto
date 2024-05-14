@@ -8,15 +8,13 @@ package globoFeliz.modelo;
 
 import globoFeliz.modelo.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class ArrayListProveedor{
 	
 
 // ATRIBUTOS 
 
-	private ArrayList <Proveedor> proveedores = new ArrayList <Proveedor> ();
-	private Scanner lector = new Scanner (System.in);
+private ArrayList <Proveedor> proveedores = new ArrayList <Proveedor> ();
 
 
 
@@ -24,43 +22,15 @@ public class ArrayListProveedor{
 
 	// CREATE
 
-	public Proveedor leerDatosProveedor () {
-
-		Proveedor proveedorNuevo = new Proveedor();
-
-		System.out.println ("\nIngrese los siguientes datos del proveedor: ");
-
-		System.out.print ("\nNombre: ");
-		proveedorNuevo.setNombreProveedor(lector.nextLine());
-
-
-		System.out.print ("\nTelefono: ");
-		proveedorNuevo.setTelefonoproveedor(lector.nextLine());
-
-
-		System.out.print ("\nCorreo Electronico: ");
-		proveedorNuevo.setCorreoProveedor(lector.nextLine());
-
-
-		System.out.print ("\nDirección Fiscal: ");
-		proveedorNuevo.setDireccionFiscal(lector.nextLine());
-
-		System.out.print ("\nRFC: ");
-		proveedorNuevo.setDireccionFiscal(lector.nextLine());
-
-		return proveedorNuevo;
-
-	}
-
-	public boolean agregarProvedoor (Proveedor proveedorNuevo) {
+	public boolean agregarProveedor (Proveedor proveedorNuevo) {
 
 		return proveedores.add(proveedorNuevo);
 	}
-
+	
 
 	// READ
 
-	public int buscarProveedor (String id) {
+	public int buscarProveedor (String idProveedor) {
 
 		if (proveedores.size() <= 0) {
 
@@ -76,7 +46,7 @@ public class ArrayListProveedor{
 
 				String idArreglo = proveedores.get(contador).getIdProveedor();
 
-				if (!(id.equals(idArreglo))) {
+				if (!(idProveedor.equals(idArreglo))) {
 
 					contador++;
 
@@ -103,28 +73,15 @@ public class ArrayListProveedor{
 		return proveedores.get(posicion);
 	}
 
-	public void escribir () {
+	public int getTamaño () {
 
-		String texto;
-		Proveedor proveedorEscrito;
-
-		for (int i = 0; i < proveedores.size(); i ++){
-		
-			proveedorEscrito = proveedores.get(i);
-
-			texto = "\nID: " + proveedorEscrito.getIdProveedor() + "\nNombre: " + proveedorEscrito.getNombreProveedor()
-					 + "\nTelefono: " + proveedorEscrito.getTelefonoProveedor() + "\nCorreo Electronico: "
-					  + proveedorEscrito.getCorreoProveedor() + "\nDirección Fiscal: " + proveedorEscrito.getDireccionFiscal())
-					  + "\nRFC: " + proveedorEscrito.getRfcProveedor();
-			
-			System.out.println(texto);
-		}
+		return proveedores.size();
 	}
 
-
+	
 	// UPDATE
 
-	public boolean remplazarProveeedor (String id, Proveedor proveedorNuevo) {
+	public boolean remplazarProveeedor (String idProveedor, Proveedor proveedorNuevo) {
 
 		if (proveedores.size() <= 0) {
 
@@ -132,7 +89,7 @@ public class ArrayListProveedor{
 		
 		} else {
 
-			int posicion = buscarProveedor(id);
+			int posicion = buscarProveedor(idProveedor);
 
 			if (posicion == -1) {
 
@@ -148,6 +105,65 @@ public class ArrayListProveedor{
 		}
 	}
 
+	public boolean modificarProveedor (String idProveedor, int opcion, String modificaCadena) {
+		
+		if (proveedores.size() <= 0) {
+
+			return false;
+		
+		} else {
+
+			int posicion = buscarProveedor(idProveedor);
+
+			if (posicion == -1) {
+
+				return false;
+			
+			} else {
+
+				Proveedor proveedorModificado = proveedores.get(posicion);
+
+				switch (opcion) {
+					case 1:
+						
+						 proveedorModificado.setNombreProveedor(modificaCadena);
+
+						break;
+				
+					case 2:
+						
+						proveedorModificado.setTelefonoproveedor(modificaCadena);
+
+					    break;	
+
+					case 3:
+						
+						proveedorModificado.setCorreoProveedor(modificaCadena);
+
+					    break;	
+
+					case 4:
+						
+						proveedorModificado.setDireccionFiscal(modificaCadena);
+
+					    break;
+					
+					case 5:
+						
+						proveedorModificado.setRfcProveedor(modificaCadena);
+
+					    break;		
+					
+					default:
+						break;
+				}
+
+				return true;
+				
+			}
+		}
+
+	}
 
 	// DELETE
 
