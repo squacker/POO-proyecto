@@ -1,8 +1,6 @@
 /*
 Clase: ArrayListinventario
-
 Autor: Fernando Cordero 
-Version: 1.0
 */
 
 package globoFeliz.modelo;

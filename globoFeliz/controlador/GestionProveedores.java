@@ -1,10 +1,6 @@
-/**
- * Clase: GestionProveedores
- * 
- * (Controlador de Clase Proveedor)
- * 
- * Autor: Alonso Martienz Juan Carlos
- * Version: 1.0
+/*
+Clase: GestionProveedores
+Autor: Alonso Martienz Juan Carlos
 */
 
 package globoFeliz.controlador;

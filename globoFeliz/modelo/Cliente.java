@@ -1,10 +1,6 @@
 /*
-
-Modelo: Cliente
-
+Clase: Cliente
 Autor: Uriel Solalíndez
-Version: 1.0
-
 */
 
 package globoFeliz.modelo;

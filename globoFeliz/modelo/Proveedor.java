@@ -1,11 +1,9 @@
-package globoFeliz.modelo;
+/*
+Clase: Proveedor
+Autor: Alonso Martinez Juan Carlos
+*/
 
-/**
- *  Modelo: Proveedor
- *  Autor:  Alonso Martinez Juan Carlos.
- *  Versión:1.0 
- * 
- */
+package globoFeliz.modelo;
 
 public class Proveedor {
 

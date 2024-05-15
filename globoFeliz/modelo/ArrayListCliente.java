@@ -1,10 +1,6 @@
 /*
-
-Modelo: ArrayListCliente
-
+Clase: ArrayListCliente
 Autor: Uriel Solalíndez
-Version: 1.0
-
 */
 
 package globoFeliz.modelo;

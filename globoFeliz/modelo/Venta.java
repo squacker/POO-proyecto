@@ -1,8 +1,7 @@
-// /*
-// Modelo: Venta
-// Autor: Fernando Cordero 
-// Version: 1.0
-// */
+/*
+Clase: Venta
+Autor: Fernando Cordero 
+*/
 
 package globoFeliz.modelo;
 

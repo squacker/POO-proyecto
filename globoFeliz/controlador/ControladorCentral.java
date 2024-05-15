@@ -1,16 +1,15 @@
-/**
- *  Modelo: ControladorCentral
- *  Autor:  Fernando Cordero
- * 
- *  Versión: 1.0 
- * 
- */
+/*
+Clase: ControladorCentral
+Autor: Fernando Cordero
+*/
 
 package globoFeliz.controlador;
 
 import globoFeliz.vista.*;
 
 class ControladorCentral {
+
+// OPCIONES MENU 
 
     public enum FUNCIONES {
         PRODUCTOS,
@@ -29,8 +28,6 @@ class ControladorCentral {
     private static GestionInventario controladorInventario = new GestionInventario();
 
     private static GestionProveedores controladorProveedores = new GestionProveedores();
-
-
 
 
 // FUNCION MAIN 

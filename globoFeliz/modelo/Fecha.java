@@ -1,12 +1,9 @@
 /* 
 Clase: Fecha
-(Esta clase sirve para registrar la fecha del dia en curso,
+(Clase Auxiliar: Esta clase sirve para registrar la fecha del dia en curso,
 es usada para registrar la fecha de ventas y de abastecimientos) 
 
-(Clase Auxiliar)
-
 Autor: Fernando Cordero
-Version: 1.0
 */
 
 package globoFeliz.modelo;

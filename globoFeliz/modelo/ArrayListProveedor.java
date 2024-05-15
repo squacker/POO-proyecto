@@ -1,7 +1,6 @@
-/**
+/*
 Clase: ArrayListinventario
 Autor: Alonso Martinez Juan Carlos 
-Version: 1.0
 */
 
 package globoFeliz.modelo;
