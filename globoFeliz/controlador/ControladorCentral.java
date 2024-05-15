@@ -8,8 +8,6 @@
 
 package globoFeliz.controlador;
 
-import java.io.IOException;
-
 import globoFeliz.vista.*;
 
 class ControladorCentral {
