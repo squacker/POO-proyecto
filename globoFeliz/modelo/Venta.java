@@ -1,8 +1,5 @@
 // /*
 // Modelo: Venta
-
-// (Clase Principal)
-
 // Autor: Fernando Cordero 
 // Version: 1.0
 // */

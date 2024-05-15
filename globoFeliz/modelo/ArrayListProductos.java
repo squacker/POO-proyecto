@@ -1,8 +1,6 @@
 /*
 Clase: ArrayListinventario
 
-(Clase Arreglo Principal)
-
 Autor: Fernando Cordero 
 Version: 1.0
 */

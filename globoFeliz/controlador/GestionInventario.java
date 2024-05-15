@@ -1,5 +1,5 @@
 /*
-Clase: ArrayListinventario
+Clase: GestionInventario
 
 (Controlador de Clase Producto)
 
@@ -14,21 +14,21 @@ import globoFeliz.vista.*;
 
 public class GestionInventario {
 
-	 public static void main(String[] args) {
 	
-// VARIABLES AUXILIARES
-		
-		IGUProductos interfaz = new IGUProductos();
+// ATRIBUTOS
 
-		String id;
+	private ArrayListProductos inventario = new ArrayListProductos(); // MODELO
 
-		int opcion;
+	private IGUProductos interfaz = new IGUProductos(); // VISTA
 
-		Producto productoNuevo;
+	
+// CONSTRUCTOR 	
 
- 		ArrayListProductos inventario = new ArrayListProductos();
+	// sin parametros 
 
-// PRODUCTOS INICIALES
+	public GestionInventario () {
+
+		// DATOS INICIALES (PRUEBA)
 
 		Producto productoPrueba = new Producto ("Paquete de Globos 0", "aaa", 115.41f, 35);
 
@@ -40,15 +40,29 @@ public class GestionInventario {
 
 		Producto productoPrueba4 = new Producto ("Paquete de Globos 4", "uuu", 150.00f, 67);
 
-
 		inventario.agregarProducto(productoPrueba);
 		inventario.agregarProducto(productoPrueba1);
 		inventario.agregarProducto(productoPrueba2);
 		inventario.agregarProducto(productoPrueba3);
 		inventario.agregarProducto(productoPrueba4);
 
+	}
 
-// CONTROLADOR DE MENU PRINCIPAL
+	// con parametros (pendiente)
+
+	
+// METODO PRINCIPAL CLASE PRODUCTO
+
+	public void ejecutarControlador () {
+
+
+		// VARIABLES AUXILIARES
+
+		String id;
+		int opcion;
+		Producto productoNuevo;
+
+		// CONTROLADOR DE MENU PRINCIPAL
 
 		do {
 
@@ -212,7 +226,11 @@ public class GestionInventario {
 		} while (opcion != 0);
 	
 	} 
-
+	
+	
 }
+
+
+
 
 

@@ -1,8 +1,5 @@
 /*
-Modelo: Cliente
-
-(Clase Principal)
-
+Modelo: Producto
 Autor: Fernando Cordero 
 Version: 1.0
 */
@@ -123,14 +120,16 @@ public class Producto {
 
 	}
 
-	public void restarExistencias (int cantidad) {
+	// METODOS QUE INTERACTUAN CON CLASE VENTA 
 
-		existenciasProducto = existenciasProducto - cantidad;
+	public void restarExistencias (int cantidadRestada) {
+
+		existenciasProducto = existenciasProducto - cantidadRestada;
 	}
 
-	public void sumarExistencias (int cantidad) {
+	public void sumarExistencias (int cantidadSumada) {
 
-		existenciasProducto = existenciasProducto + cantidad;
+		existenciasProducto = existenciasProducto + cantidadSumada;
 	}
 
 }

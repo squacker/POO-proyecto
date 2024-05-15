@@ -11,6 +11,7 @@ package globoFeliz.vista;
 
 import globoFeliz.modelo.*;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,6 +21,8 @@ public class IGUProveedor {
     private Scanner lector = new Scanner (System.in);
 
     public int menuProveedor() {
+
+        limpiarConsola ();
 
         int opcion;
 
@@ -32,7 +35,7 @@ public class IGUProveedor {
                 "6. Mostrar Listado de Proveedores\n" +
                 "0. Salir\n");
 
-        do {
+        do { 
 
             try {
 
@@ -79,8 +82,6 @@ public class IGUProveedor {
 
         nuevoProveedor.setRfcProveedor(this.leerRfcProveedorNuevo());
 
-        this.limpiarBuffer();
-
         return nuevoProveedor;
     }
 
@@ -98,7 +99,9 @@ public class IGUProveedor {
 
     public void mensaje (String mensaje) {
 
-        System.out.println("\n" + mensaje);
+        System.out.println("\n" + mensaje + " - Presiona cualquier tecla para continuar");
+
+        lector.nextLine();
     }
 
     public int leerOpcionModificar() {
@@ -204,6 +207,7 @@ public class IGUProveedor {
 
         return telefonoNuevo;
     }
+    
     public String leerCorreoProveedorNuevo () {
 
         String correoNuevo = " ";
@@ -235,6 +239,7 @@ public class IGUProveedor {
 
         return correoNuevo;
     }
+    
     public String leerDirecionFiscalNuevo () {
 
         String direccionFiscNueva = " ";
@@ -266,6 +271,7 @@ public class IGUProveedor {
 
         return direccionFiscNueva;
     }
+    
     public String leerRfcProveedorNuevo () {
 
         String rfcNuevo = " ";
@@ -303,7 +309,7 @@ public class IGUProveedor {
         lector.nextLine();
     }
 
-    public void escribirProveedor (ArrayListProveedor proveedores) {
+    public void escribirProveedores (ArrayListProveedor proveedores) {
 
 		Proveedor proveedorEscrito;
 
@@ -311,9 +317,34 @@ public class IGUProveedor {
 		
 			proveedorEscrito = proveedores.getProveedor(i);
 
-			System.out.println(proveedorEscrito.imprimirDatospv());
+			System.out.println(proveedorEscrito.imprimirDatos());
 		}
+
+        System.out.println("\nPresiona cualquier tecla para salir...");
+
+        lector.nextLine();
+
 	}
+
+
+    public void limpiarConsola () {
+
+        try {
+
+            String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                // Comando para limpiar consola en Unix/Linux/Mac
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
 
     

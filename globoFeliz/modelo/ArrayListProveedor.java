@@ -14,7 +14,7 @@ public class ArrayListProveedor{
 
 // ATRIBUTOS 
 
-private ArrayList <Proveedor> proveedores = new ArrayList <Proveedor> ();
+	private ArrayList <Proveedor> proveedores = new ArrayList <Proveedor> ();
 
 
 
@@ -81,7 +81,7 @@ private ArrayList <Proveedor> proveedores = new ArrayList <Proveedor> ();
 	
 	// UPDATE
 
-	public boolean remplazarProveeedor (String idProveedor, Proveedor proveedorNuevo) {
+	public boolean remplazarProveedor (String idProveedor, Proveedor proveedorNuevo) {
 
 		if (proveedores.size() <= 0) {
 

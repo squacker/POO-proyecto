@@ -1,9 +1,12 @@
 /**
- * Clase: CntroladorProveedores
+ * Clase: GestionProveedores
+ * 
  * (Controlador de Clase Proveedor)
+ * 
  * Autor: Alonso Martienz Juan Carlos
  * Version: 1.0
 */
+
 package globoFeliz.controlador;
 
 import globoFeliz.modelo.*;
@@ -11,131 +14,146 @@ import globoFeliz.vista.*;
 
 public class GestionProveedores {
 
-    // VARIABLES AUXILIARES
-		
-	IGUProveedor interfaz = new IGUProveedor();
+	// ATRIBUTOS
 
-	String id;
+	private ArrayListProveedor proveedores = new ArrayListProveedor(); // MODELO
 
-	int opcion;
+	private IGUProveedor interfaz = new IGUProveedor(); // VISTA
 
-	Proveedor proveedorNuevo;
+	// CONSTRUCTOR
 
- 	ArrayListProveedor proveedores = new ArrayListProveedor();
+	// sin parametros
 
-// ProveedorS INICIALES
+	public GestionProveedores () {
 
-	Proveedor ProveedorPrueba = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		// DATOS INICIALES (PRUEBA)
 
-	Proveedor ProveedorPrueba1 = new Proveedor ("Paquete de Globos 1", "eee", );
+		Proveedor ProveedorPrueba = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-	Proveedor ProveedorPrueba2 = new Proveedor ("Paquete de Globos 2", "iii", 123.43f, 56);
+		Proveedor ProveedorPrueba1 = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-	Proveedor ProveedorPrueba3 = new Proveedor ("Paquete de Globos 3", "ooo", 321.51f, 66);
+		Proveedor ProveedorPrueba2 = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-	Proveedor ProveedorPrueba4 = new Proveedor ("Paquete de Globos 4", "uuu", 150.00f, 67);
+		Proveedor ProveedorPrueba3 = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-
-	proveedores.agregarProveedor(ProveedorPrueba);
-	proveedores.agregarProveedor(ProveedorPrueba1);
-	proveedores.agregarProveedor(ProveedorPrueba2);
-	proveedores.agregarProveedor(ProveedorPrueba3);
-	proveedores.agregarProveedor(ProveedorPrueba4);
+		Proveedor ProveedorPrueba4 = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
 
-// CONTROLADOR DE MENU PRINCIPAL
+		proveedores.agregarProveedor(ProveedorPrueba);
+		proveedores.agregarProveedor(ProveedorPrueba1);
+		proveedores.agregarProveedor(ProveedorPrueba2);
+		proveedores.agregarProveedor(ProveedorPrueba3);
+		proveedores.agregarProveedor(ProveedorPrueba4);
 
-	do {
+	}
 
-		opcion = interfaz.menuProveedor();
+	// con parametros (pendiente)
 
-	// SWITCH MENU
+	// METODO PRINCIPAL CLASE PROVEEDOR
 
-		switch (opcion) {
+	public void ejecutarControlador() {
 
+		// VARIABLES AUXILIARES
 
-			
+		String id;
 
-			case 1: // AGREGAR (CREATE)
+		int opcion;
 
-				proveedorNuevo = interfaz.leerDatosProveedor();
-				proveedores.agregarProveedor(proveedorNuevo);
-				
-				break;
-				
-				
-			case 2: // REEMPLAZAR (UPDATE)
+		Proveedor proveedorNuevo;
 
-				id = interfaz.leerIdProveedor();
+		// CONTROLADOR DE MENU PRINCIPAL
 
-				if (proveedores.buscarProveedor(id) == -1) {
+		do {
 
-					interfaz.mensaje("El id que ingresaste no existe");
+			opcion = interfaz.menuProveedor();
 
-				} else {
+			// SWITCH MENU
+
+			switch (opcion) {
+
+				case 1: // AGREGAR (CREATE)
 
 					proveedorNuevo = interfaz.leerDatosProveedor();
-					proveedores.remplazarProveedor(id, proveedorNuevo);
+					proveedores.agregarProveedor(proveedorNuevo);
 
-				}
+					break;
 
-				break;
+				case 2: // REEMPLAZAR (UPDATE)
 
+					id = interfaz.leerIdProveedor();
 
-				
-			case 3: // MODIFICAR (UPDATE)
+					if (proveedores.buscarProveedor(id) == -1) {
 
-				id = interfaz.leerIdProveedor();
+						interfaz.mensaje("El id que ingresaste no existe");
 
-				if (proveedores.buscarProveedor(id) == -1) {
+					} else {
 
-					interfaz.mensaje("El id que ingresaste no existe");
+						proveedorNuevo = interfaz.leerDatosProveedor();
+						proveedores.remplazarProveedor(id, proveedorNuevo);
 
-				} else {
+					}
 
-					int opcionModificar;
+					break;
 
-					String nuevaCadena;
-					float nuevoPrecio;
-					int nuevoExistencias;
+				case 3: // MODIFICAR (UPDATE)
 
-					opcionModificar = interfaz.leerOpcionModificar();
+					id = interfaz.leerIdProveedor();
 
-					switch (opcionModificar) {
+					if (proveedores.buscarProveedor(id) == -1) {
 
-						case 1: // MODIFICAR NOMBRE
-							
-							nuevaCadena = interfaz.leerNombreProveedorNuevo();
+						interfaz.mensaje("El id que ingresaste no existe");
 
-							proveedores.modificarProveedor(id, opcionModificar, nuevaCadena, 0.0f, 0);
-		
-							break;
+					} else {
+
+						int opcionModificar;
+
+						String nuevaCadena;
 						
-						case 2: // MODIFICAR PESCRIPCION
-								
-							nuevaCadena = interfaz.leerDescripcionNuevo();
-								
-							proveedores.modificarProveedor(id, opcionModificar, nuevaCadena, 0.0f, 0);
-		
-							break;	
-		
-						case 3: // MODIFICAR PRECIO
-								
-							nuevoPrecio = interfaz.leerPrecioNuevo();
-								
-							proveedores.modificarProveedor(id, opcionModificar, " ", nuevoPrecio, 0);
-		
-							break;	
-		
-							case 4: // MODIFICAR EXISTENCIAS
-								
-								nuevoExistencias = interfaz.leerExistenciasNuevo();
-								
-								proveedores.modificarProveedor(id, opcionModificar, " ", 0.0f, nuevoExistencias);
-		
-								break;	
+
+						opcionModificar = interfaz.leerOpcionModificar();
+
+						switch (opcionModificar) {
+
+							case 1: // MODIFICAR NOMBRE
+
+								nuevaCadena = interfaz.leerNombreProveedorNuevo();
+
+								proveedores.modificarProveedor(id, opcionModificar, nuevaCadena);
+
+								break;
+
+							case 2: // MODIFICAR TELEFONO
+
+								nuevaCadena = interfaz.leerTelefonoNuevo();
+
+								proveedores.modificarProveedor(id, opcionModificar, nuevaCadena);
+
+								break;
+
+							case 3: // MODIFICAR CORREO
+
+								nuevaCadena = interfaz.leerCorreoProveedorNuevo();
+
+								proveedores.modificarProveedor(id, opcionModificar, nuevaCadena);
+
+								break;
+
+							case 4: // MODIFICAR DIRECCION FISCAL
+
+								nuevaCadena = interfaz.leerDirecionFiscalNuevo();
+
+								proveedores.modificarProveedor(id, opcionModificar, nuevaCadena);
+
+								break;
 							
-							
+							case 5: // MODIFICAR RFC
+
+								nuevaCadena = interfaz.leerRfcProveedorNuevo();
+
+								proveedores.modificarProveedor(id, opcionModificar, nuevaCadena);
+
+								break;
+
 							case 0: // CANCELAR
 
 								break;
@@ -147,7 +165,7 @@ public class GestionProveedores {
 					}
 
 					break;
-				
+
 				case 4: // ELIMINAR (DELETE)
 
 					id = interfaz.leerIdProveedor();
@@ -163,7 +181,7 @@ public class GestionProveedores {
 					}
 
 					break;
-				
+
 				case 5: // BUSCAR (READ)
 
 					id = interfaz.leerIdProveedor();
@@ -180,30 +198,27 @@ public class GestionProveedores {
 
 						interfaz.mensaje(ProveedorEscrito.imprimirDatos());
 					}
-				
+
 					break;
-				
-				case 6: // LISTAR (READ) 
-				
-					interfaz.escribirproveedores(proveedores);
-				
+
+				case 6: // LISTAR (READ)
+
+					interfaz.escribirProveedores(proveedores);
+
 					break;
-				
-				
+
 				case 0: // SALIR
-				
+
 					break;
-				
-				
+
 				default:
 
 					break;
-				
 
-				}
+			}
 
 		} while (opcion != 0);
-	
+
 	}
 
 }

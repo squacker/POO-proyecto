@@ -11,6 +11,7 @@ package globoFeliz.vista;
 
 import globoFeliz.modelo.*;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,6 +21,8 @@ public class IGUProductos {
     private Scanner lector = new Scanner (System.in);
 
     public int menuInventario() {
+
+        limpiarConsola ();
 
         int opcion;
 
@@ -96,7 +99,10 @@ public class IGUProductos {
 
     public void mensaje (String mensaje) {
 
-        System.out.println("\n" + mensaje);
+        System.out.println("\n" + mensaje + " - Presiona cualquier tecla para continuar");
+
+        lector.nextLine();
+
     }
 
     public int leerOpcionModificar() {
@@ -281,20 +287,46 @@ public class IGUProductos {
 
     public void limpiarBuffer () {
 
-        lector.nextLine();
+            lector.nextLine();
+
     }
 
     public void escribirInventario (ArrayListProductos inventario) {
 
-		Producto productoEscrito;
+        limpiarConsola();
+   
+        Producto productoEscrito;
 
-		for (int i = 0; i < inventario.getTamaño(); i ++){
-		
-			productoEscrito = inventario.getProducto(i);
+        for (int i = 0; i < inventario.getTamaño(); i ++){
+            
+            productoEscrito = inventario.getProducto(i);
 
-			System.out.println(productoEscrito.imprimirDatos());
-		}
+            System.out.println(productoEscrito.imprimirDatos());
+        }
+
+        System.out.println("\nPresiona cualquier tecla para salir...");
+
+        lector.nextLine();
+
 	}
+
+    public void limpiarConsola () {
+
+        try {
+
+            String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                // Comando para limpiar consola en Unix/Linux/Mac
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
 
     

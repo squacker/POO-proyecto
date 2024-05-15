@@ -6,19 +6,21 @@ package globoFeliz.modelo;
  *  Versión:1.0 
  * 
  */
+
 public class Proveedor {
 
-    //atributos
+//atributos
 
     private String idProveedor, nombreProveedor, telefonoProveedor, correoProveedor, direccionFiscal, rfcProveedor;
 
-    //Constructor 
+//Constructor 
+
     public Proveedor(){
 
 		setIdProovedor();
 	}
 
-	// Con parametros 
+// Con parametros 
 
 	public Proveedor(String nombreProveedor, String correoProveedor, String telefonoProveedor, String direccionFiscal, String rfcProveedor ) {
 
@@ -31,7 +33,7 @@ public class Proveedor {
 
 	}
 
-    //Setters
+//Setters
 
     public void setIdProovedor(){
 
@@ -70,7 +72,7 @@ public class Proveedor {
 
     }
 
-    //GETTERS
+//GETTERS
 
     public String getIdProveedor(){
 
@@ -108,6 +110,9 @@ public class Proveedor {
 
     }
 
+
+// METODOS 
+
     public static String generarIdProveedor() {
 
         Identificador id = new Identificador ("pv");
@@ -115,7 +120,7 @@ public class Proveedor {
         return id.getId();
 	}
 
-    public String imprimirDatospv () {
+    public String imprimirDatos () {
 
 		String datosProducto = "\nId: " + idProveedor +
 								"\nNombre: " + nombreProveedor +
@@ -127,4 +132,7 @@ public class Proveedor {
 		return datosProducto;
 
 	}
+
+    // PENDIENTES LOS METODOS QUE INTERACTUAN CON CLASE ABASTECIMIENTO 
+
 }

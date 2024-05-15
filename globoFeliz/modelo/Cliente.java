@@ -35,7 +35,7 @@ public class Cliente {
     // Con parámetros
 
     public Cliente(String nombre, String email, int edad, String telefono) {
-        setIdCliente()
+        setIdCliente();
         setNombreCliente(nombre);
         setEmailCliente(email);
         setEdadCliente(edad);
@@ -44,8 +44,8 @@ public class Cliente {
 
 // SETTERS
 
-    public void setIdCliente(String id) {
-        this.idCliente = id;
+    public void setIdCliente() {
+        this.idCliente = generarIdCliente();
     }
 
     public void setNombreCliente(String nombre) {
@@ -57,11 +57,7 @@ public class Cliente {
     }
 
     public void setEdadCliente(int edad) {
-        if (edad >= EDAD_MINIMA && edad <= EDAD_MAXIMA) {
-            this.edadCliente = edad;
-        } else {
-            System.out.println("Edad no válida, debe estar entre " + EDAD_MINIMA + " y " + EDAD_MAXIMA);
-        }
+        this.edadCliente = edad;
     }
 
     public void setTelefonoCliente(String telefono) {
@@ -92,11 +88,25 @@ public class Cliente {
 
 // MÉTODOS 
 
-    public void actualizarEmail(String nuevoEmail) {
-        setEmailCliente(nuevoEmail);
+    public String generarIdCliente () {
+
+        Identificador id = new Identificador("cl");
+
+        return id.getId();
     }
 
-    public void actualizarTelefono(String nuevoTelefono) {
-        setTelefonoCliente(nuevoTelefono);
-    }
+    public String imprimirDatos () {
+
+		String datosCliente = "\nId: " + idCliente +
+								"\nNombre: " + nombreCliente +
+								"\nEmail: " + emailCliente +
+								"\nTelefono: " + telefonoCliente +
+								"\nEdad: " + edadCliente;
+
+		return datosCliente;
+
+	}
+    
+    // PENDIENTES LOS METODOS QUE INTERACTUAN CON LA CLASE VENTA
+    
 }
