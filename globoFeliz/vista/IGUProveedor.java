@@ -1,10 +1,6 @@
 /*
 Clase: IGUProveedor
-
-(Interfaz grafica Clase Proveedor)
-
 Autor: Alonso Martinez Juan Carlos
-Version: 1.0
 */
 
 package globoFeliz.vista;

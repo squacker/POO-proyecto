@@ -1,3 +1,8 @@
+/*
+Clase: IGUPrincipal
+Autor: Fernando Cordero 
+*/
+
 package globoFeliz.vista;
 import java.io.IOException;
 import java.util.Scanner;

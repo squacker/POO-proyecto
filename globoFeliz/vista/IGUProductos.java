@@ -1,10 +1,6 @@
 /*
 Clase: IGUProductos
-
-(Interfaz grafica Clase Producto)
-
 Autor: Fernando Cordero 
-Version: 1.0
 */
 
 package globoFeliz.vista;
