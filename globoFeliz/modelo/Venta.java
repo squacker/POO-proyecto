@@ -11,6 +11,8 @@ public class Venta {
 
 	private static Identificador identificador = new Identificador ("vt");
 
+	private ListaProductos productosVendidos;
+
 	private String idVenta, horaVenta, fechaVenta;
 	
 	private float montoTotalVenta;
@@ -27,15 +29,23 @@ public class Venta {
 
 	// con parametros 
 
-	public Venta (String id, float monto) {
+	public Venta (ListaProductos productos, String id, String hora, String fecha, float monto) {
 
+		setProductosVendidos(productos);
 		setIdVenta(id);
-		setHoraVenta();
-		setFechaVenta();
+		setHoraVenta(hora);
+		setFechaVenta(fecha);
 		setMontoTotalVenta(monto);
 	}
 
 // SETTERS 
+
+	public void setProductosVendidos (ListaProductos productos) {
+
+
+		this.productosVendidos = productos;
+
+	}
 
 	public void setIdVenta (String id) {
 		
@@ -50,29 +60,55 @@ public class Venta {
 
 	}
 
-	public void setHoraVenta() {
+	public void setHoraVenta(String hora) {
 
-		this.horaVenta = registrarHoraVenta();
+		if (hora == " ") {
+
+			this.horaVenta = registrarHoraVenta();
+
+		} else {
+
+			this.horaVenta = hora;
+		}
 	}
 
-	public void setFechaVenta() {
+	public void setFechaVenta(String fecha) {
 
-		this.fechaVenta = registrarFechaVenta();
+
+		if (fecha == " ") {
+
+			this.fechaVenta = registrarFechaVenta();
+
+		} else {
+
+			this.fechaVenta = fecha;
+		}
 	}
 
 	public void setMontoTotalVenta(float monto) {
 
-		this.montoTotalVenta = monto;
+		if (monto == 0.0f) {
+
+			this.montoTotalVenta = productosVendidos.calcularMontoTotal();
+
+		} else {
+
+			this.montoTotalVenta = monto;
+		}
 	}
 
 
 // GETTERS 
 
+	public ListaProductos getListaProductos () {
+
+		return productosVendidos;
+	}
+
 	public String getIdVenta() {
 
 		return idVenta;
 	}
-
 
 	public String getHoraVenta() {
 
@@ -116,20 +152,6 @@ public class Venta {
 		return datosVenta;
 
 	}
-
-
-
-
-	// public static void main (String [] args) {
-
-	// 	Venta venta = new Venta (115.41f);
-
-	// 	System.out.println(venta.imprimirDatos());
-
-		
-
-	// } 
-
 
 
 }

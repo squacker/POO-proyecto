@@ -1,5 +1,5 @@
 /*
-Clase: ArrayListinventario
+Clase: ArrayListProductos
 Autor: Fernando Cordero 
 */
 
@@ -157,7 +157,7 @@ public class ArrayListProductos {
 
 	}
 
-
+	
 	// DELETE
 
 	public boolean eliminarProducto (String id) {

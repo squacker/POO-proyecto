@@ -27,6 +27,8 @@ class ControladorCentral {
 
     private static GestionInventario controladorInventario = new GestionInventario();
 
+    private static GestionVentas controladorVentas = new GestionVentas();
+
     private static GestionProveedores controladorProveedores = new GestionProveedores();
 
 
@@ -51,6 +53,7 @@ class ControladorCentral {
 
                 case 2: // GESTIONAR VENTAS
 
+                    controladorVentas.ejecutarControlador();
                     break;
 
                 case 3: // GESTIONAR ABASTECIMIENTO
