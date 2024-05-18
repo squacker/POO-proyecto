@@ -24,15 +24,15 @@ public class GestionProveedores {
 
 		// DATOS INICIALES (PRUEBA)
 
-		Proveedor ProveedorPrueba = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor ProveedorPrueba = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor ProveedorPrueba1 = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor ProveedorPrueba1 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor ProveedorPrueba2 = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor ProveedorPrueba2 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor ProveedorPrueba3 = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor ProveedorPrueba3 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor ProveedorPrueba4 = new Proveedor ("Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor ProveedorPrueba4 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
 
 		proveedores.agregarProveedor(ProveedorPrueba);

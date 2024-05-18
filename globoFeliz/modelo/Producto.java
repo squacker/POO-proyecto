@@ -14,6 +14,8 @@ public class Producto {
 
 // ATRIBUTOS
 
+	private static Identificador identificador = new Identificador ("pt");
+
 	private String idProducto, nombreProducto, descripcionProducto;
 
 	private int existenciasProducto;
@@ -27,14 +29,14 @@ public class Producto {
 
 	public Producto () {
 
-		setIdProducto();
+		setIdProducto(" ");
 	}
 
 	// Con parametros 
 
-	public Producto (String nombre, String descripcion, float precio, int existencias) {
+	public Producto (String id, String nombre, String descripcion, float precio, int existencias) {
 
-		setIdProducto();
+		setIdProducto(id);
 		setNombreProducto(nombre);
 		setDescripcionProducto(descripcion);
 		setPrecioProducto(precio);
@@ -44,9 +46,16 @@ public class Producto {
 
 // SETTERS
 
-	public void setIdProducto () {
+	public void setIdProducto (String id) {
 		
-		this.idProducto = generarIdProducto();				
+		if (id == " ") {
+
+			this.idProducto = identificador.generarId();
+
+		} else {
+
+			this.idProducto = id;
+		}			
 	}
 
 	public void setNombreProducto (String nombre) {
@@ -99,13 +108,6 @@ public class Producto {
 
 
 // METODOS 
-
-	public static String generarIdProducto () {
-
-        Identificador id = new Identificador ("pr");
-
-        return id.getId();
-	}
 
 	public String imprimirDatos () {
 

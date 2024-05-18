@@ -26,15 +26,15 @@ public class GestionInventario {
 
 		// DATOS INICIALES (PRUEBA)
 
-		Producto productoPrueba = new Producto ("Paquete de Globos 0", "aaa", 115.41f, 35);
+		Producto productoPrueba = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35);
 
-		Producto productoPrueba1 = new Producto ("Paquete de Globos 1", "eee", 224.61f, 20);
+		Producto productoPrueba1 = new Producto (" ", "Paquete de Globos 1", "eee", 224.61f, 20);
 
-		Producto productoPrueba2 = new Producto ("Paquete de Globos 2", "iii", 123.43f, 56);
+		Producto productoPrueba2 = new Producto (" ", "Paquete de Globos 2", "iii", 123.43f, 56);
 
-		Producto productoPrueba3 = new Producto ("Paquete de Globos 3", "ooo", 321.51f, 66);
+		Producto productoPrueba3 = new Producto (" ", "Paquete de Globos 3", "ooo", 321.51f, 66);
 
-		Producto productoPrueba4 = new Producto ("Paquete de Globos 4", "uuu", 150.00f, 67);
+		Producto productoPrueba4 = new Producto (" ", "Paquete de Globos 4", "uuu", 150.00f, 67);
 
 		inventario.agregarProducto(productoPrueba);
 		inventario.agregarProducto(productoPrueba1);

@@ -9,20 +9,22 @@ public class Proveedor {
 
 //atributos
 
+	private static Identificador identificador = new Identificador ("pv");
+
     private String idProveedor, nombreProveedor, telefonoProveedor, correoProveedor, direccionFiscal, rfcProveedor;
 
 //Constructor 
 
     public Proveedor(){
 
-		setIdProovedor();
+		setIdProovedor(" ");
 	}
 
 // Con parametros 
 
-	public Proveedor(String nombreProveedor, String correoProveedor, String telefonoProveedor, String direccionFiscal, String rfcProveedor ) {
+	public Proveedor(String id, String nombreProveedor, String correoProveedor, String telefonoProveedor, String direccionFiscal, String rfcProveedor ) {
 
-		setIdProovedor();
+		setIdProovedor(id);
 		setNombreProveedor(nombreProveedor);
 		setTelefonoproveedor(telefonoProveedor);
         setCorreoProveedor(correoProveedor);
@@ -33,9 +35,16 @@ public class Proveedor {
 
 //Setters
 
-    public void setIdProovedor(){
+    public void setIdProovedor(String id){
 
-        this.idProveedor = generarIdProveedor();
+        if (id == " ") {
+
+			this.idProveedor = identificador.generarId();
+
+		} else {
+
+			this.idProveedor = id;
+		}
 
     }
 
@@ -110,13 +119,6 @@ public class Proveedor {
 
 
 // METODOS 
-
-    public static String generarIdProveedor() {
-
-        Identificador id = new Identificador ("pv");
-
-        return id.getId();
-	}
 
     public String imprimirDatos () {
 

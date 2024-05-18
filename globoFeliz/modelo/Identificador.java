@@ -16,13 +16,12 @@ public class Identificador {
 
 // ATRIBUTOS
 
-    Random random = new Random();
+    private static Random random = new Random();
 
-    String tipoId;
+    private String tipoId;
 
-    int numId;
+    private int numId;
 
-    String id;
 
     
 // CONSTRUCTOR
@@ -31,7 +30,6 @@ public class Identificador {
 
         setTipoId(tipo); 
         setNumId();
-        setId();
     }
 
 
@@ -47,11 +45,6 @@ public class Identificador {
         this.numId = random.nextInt(900) + 100;
     }
 
-    private void setId() {
-
-        this.id = getTipoId()  + getNumId();
-    }
-
 // GETTERS
 
     public String getTipoId () {
@@ -64,9 +57,12 @@ public class Identificador {
         return numId;
     }
 
-    public String getId () {
 
-        return id;
+// METODOS
+
+    public String generarId () {
+
+        return (tipoId + numId);
     }
 
    

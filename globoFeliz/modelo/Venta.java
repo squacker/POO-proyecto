@@ -9,6 +9,7 @@ public class Venta {
 
 // ATRIBUTOS
 
+	private static Identificador identificador = new Identificador ("vt");
 
 	private String idVenta, horaVenta, fechaVenta;
 	
@@ -21,14 +22,14 @@ public class Venta {
 
 	public Venta () {
 
-		setIdVenta();
+		setIdVenta(" ");
 	}
 
 	// con parametros 
 
-	public Venta (float monto) {
+	public Venta (String id, float monto) {
 
-		setIdVenta();
+		setIdVenta(id);
 		setHoraVenta();
 		setFechaVenta();
 		setMontoTotalVenta(monto);
@@ -36,9 +37,17 @@ public class Venta {
 
 // SETTERS 
 
-	public void setIdVenta () {
+	public void setIdVenta (String id) {
+		
+		if (id == " ") {
 
-		this.idVenta = generarIdVenta();
+			this.idVenta = identificador.generarId();
+
+		} else {
+
+			this.idVenta = id;
+		}
+
 	}
 
 	public void setHoraVenta() {
@@ -82,13 +91,6 @@ public class Venta {
 
 
 // METODOS 
-
-	public static String generarIdVenta () {
-
-        Identificador id = new Identificador ("Vent");
-
-        return id.getId();
-	}
 
 	public static String registrarHoraVenta () {
 

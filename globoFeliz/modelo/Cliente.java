@@ -14,8 +14,12 @@ public class Cliente {
 
 // ATRIBUTOS
 
+    private static Identificador identificador = new Identificador ("vt");
+
     private String idCliente, nombreCliente, emailCliente;
+
     private int edadCliente;
+
     private String telefonoCliente;
 
 // CONSTRUCTORES
@@ -24,14 +28,14 @@ public class Cliente {
 
     public Cliente() {
 
-        setIdCliente();
+        setIdCliente(" ");
         
     }
 
     // Con parámetros
 
-    public Cliente(String nombre, String email, int edad, String telefono) {
-        setIdCliente();
+    public Cliente(String id, String nombre, String email, int edad, String telefono) {
+        setIdCliente(id);
         setNombreCliente(nombre);
         setEmailCliente(email);
         setEdadCliente(edad);
@@ -40,8 +44,16 @@ public class Cliente {
 
 // SETTERS
 
-    public void setIdCliente() {
-        this.idCliente = generarIdCliente();
+    public void setIdCliente(String id) {
+
+        if (id == " ") {
+
+			this.idCliente = identificador.generarId();
+
+		} else {
+
+			this.idCliente = id;
+		}
     }
 
     public void setNombreCliente(String nombre) {
@@ -83,13 +95,6 @@ public class Cliente {
     }
 
 // MÉTODOS 
-
-    public String generarIdCliente () {
-
-        Identificador id = new Identificador("cl");
-
-        return id.getId();
-    }
 
     public String imprimirDatos () {
 
