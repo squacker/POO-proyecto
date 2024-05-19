@@ -65,8 +65,7 @@ public class IGUVentas {
 
         System.out.printf("\nIngresa el id del producto: ");
 
-        idProducto = lector.nextLine();
-    
+        idProducto = lector.nextLine();    
 
 		return idProducto;
     }

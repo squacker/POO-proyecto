@@ -13,7 +13,9 @@ public class GestionInventario {
 	
 // ATRIBUTOS
 
-	private ArrayListProductos inventario = new ArrayListProductos(); // MODELO
+	Producto producto;
+
+	private ArrayListProductos inventario = new ArrayListProductos(producto); // MODELO
 
 	private IGUProductos interfaz = new IGUProductos(); // VISTA
 

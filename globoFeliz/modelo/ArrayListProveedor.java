@@ -13,31 +13,35 @@ public class ArrayListProveedor{
 
 // ATRIBUTOS 
 
-	private ArrayList <Proveedor> proveedores = new ArrayList <Proveedor> ();
+	private static ArrayList <Proveedor> proveedores = new ArrayList <Proveedor> ();
 
 
 // CONSTRUCTOR 
 
 	public ArrayListProveedor () {
 
+	}
+
+	public ArrayListProveedor (Proveedor proveedorPrueba) {
+
 		// DATOS INICIALES (PRUEBA)
 
-		Proveedor ProveedorPrueba = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		proveedorPrueba = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor ProveedorPrueba1 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorPrueba1 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor ProveedorPrueba2 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorPrueba2 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor ProveedorPrueba3 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorPrueba3 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor ProveedorPrueba4 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorPrueba4 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
 
-		agregarProveedor(ProveedorPrueba);
-		agregarProveedor(ProveedorPrueba1);
-		agregarProveedor(ProveedorPrueba2);
-		agregarProveedor(ProveedorPrueba3);
-		agregarProveedor(ProveedorPrueba4);
+		agregarProveedor(proveedorPrueba);
+		agregarProveedor(proveedorPrueba1);
+		agregarProveedor(proveedorPrueba2);
+		agregarProveedor(proveedorPrueba3);
+		agregarProveedor(proveedorPrueba4);
 
 	}
 

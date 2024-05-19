@@ -13,14 +13,20 @@ public class ArrayListVenta {
     
 // ATRIBUTOS 
 
-	private ArrayList <Venta> ventas = new ArrayList <Venta> ();
+	private static ArrayList <Venta> ventas = new ArrayList <Venta> ();
 
 
 // CONSTRUCTOR 
 
 	public ArrayListVenta () {
 
-		Venta ventaPrueba = new Venta ("vt000", "19:25", "20-04-2024", 10.0f);
+		
+
+	}
+
+	public ArrayListVenta (Venta ventaPrueba) {
+
+		ventaPrueba = new Venta ("vt000", "19:25", "20-04-2024", 10.0f);
 
 		Venta ventaPrueba2 = new Venta (" ", " ", " ", 15.5f);
 
@@ -35,7 +41,6 @@ public class ArrayListVenta {
 		agregarVenta(ventaPrueba3);
 		agregarVenta(ventaPrueba4);
 		agregarVenta(ventaPrueba5);
-
 	}
     
 // METODOS (CRUD)

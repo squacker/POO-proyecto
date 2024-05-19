@@ -20,7 +20,12 @@ public class ArrayListProductos {
 	
 	public ArrayListProductos () {
 
-		Producto productoPrueba = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35);
+		
+	}
+
+	public ArrayListProductos (Producto productoPrueba) {
+
+		productoPrueba = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35);
 
 		Producto productoPrueba1 = new Producto (" ", "Paquete de Globos 1", "eee", 224.61f, 20);
 
