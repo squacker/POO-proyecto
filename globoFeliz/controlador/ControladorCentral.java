@@ -60,18 +60,12 @@ class ControladorCentral {
 
                     break;
 
-
-                case 4: // GESTIONAR CLIENTES
-
-                    break;
-
-
-                case 5: // GESTIONAR PROVEEDORES
+                case 4: // GESTIONAR PROVEEDORES
 
                     controladorProveedores.ejecutarControlador();
                     break;
 
-                case 6: // SALIR
+                case 0: // SALIR
 
                     break;
 

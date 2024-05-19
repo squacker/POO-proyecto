@@ -24,8 +24,7 @@ public class IGUPrincipal {
                 "1. Productos\n" +
                 "2. Ventas\n" +
                 "3. Abastecimientos\n" +
-                "4. Clientes\n" +
-                "5. Proveedores\n" +
+                "4. Proveedores\n" +
                 "0. Salir\n");
 
         do {

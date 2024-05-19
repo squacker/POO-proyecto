@@ -14,7 +14,7 @@ public class Producto {
 
 // ATRIBUTOS
 
-	private static Identificador identificador = new Identificador ("pt");
+	private Identificador identificador = new Identificador ("pt");
 
 	private String idProducto, nombreProducto, descripcionProducto;
 

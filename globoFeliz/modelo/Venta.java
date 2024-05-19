@@ -9,9 +9,12 @@ public class Venta {
 
 // ATRIBUTOS
 
-	private static Identificador identificador = new Identificador ("vt");
+	private Identificador identificador = new Identificador ("vt");
 
-	private ListaProductos productosVendidos;
+	private Hora horaActual = new Hora();
+
+	private Fecha fechaActual = new Fecha();
+
 
 	private String idVenta, horaVenta, fechaVenta;
 	
@@ -29,9 +32,8 @@ public class Venta {
 
 	// con parametros 
 
-	public Venta (ListaProductos productos, String id, String hora, String fecha, float monto) {
+	public Venta (String id, String hora, String fecha, float monto) {
 
-		setProductosVendidos(productos);
 		setIdVenta(id);
 		setHoraVenta(hora);
 		setFechaVenta(fecha);
@@ -39,13 +41,6 @@ public class Venta {
 	}
 
 // SETTERS 
-
-	public void setProductosVendidos (ListaProductos productos) {
-
-
-		this.productosVendidos = productos;
-
-	}
 
 	public void setIdVenta (String id) {
 		
@@ -64,7 +59,7 @@ public class Venta {
 
 		if (hora == " ") {
 
-			this.horaVenta = registrarHoraVenta();
+			this.horaVenta = horaActual.getHora();
 
 		} else {
 
@@ -77,7 +72,7 @@ public class Venta {
 
 		if (fecha == " ") {
 
-			this.fechaVenta = registrarFechaVenta();
+			this.fechaVenta = fechaActual.getFecha();
 
 		} else {
 
@@ -89,7 +84,8 @@ public class Venta {
 
 		if (monto == 0.0f) {
 
-			this.montoTotalVenta = productosVendidos.calcularMontoTotal();
+			this.montoTotalVenta = 0.0f;
+			// productosVendidos.calcularMontoTotal();
 
 		} else {
 
@@ -99,11 +95,6 @@ public class Venta {
 
 
 // GETTERS 
-
-	public ListaProductos getListaProductos () {
-
-		return productosVendidos;
-	}
 
 	public String getIdVenta() {
 
@@ -127,20 +118,6 @@ public class Venta {
 
 
 // METODOS 
-
-	public static String registrarHoraVenta () {
-
-		Hora horaActual = new Hora ();
-
-		return horaActual.getHora();
-	}
-
-	public String registrarFechaVenta () {
-
-		Fecha fechaActual = new Fecha();
-
-		return fechaActual.getFecha();
-	}
 
 	public String imprimirDatos () {
 

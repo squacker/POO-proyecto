@@ -13,8 +13,37 @@ public class ArrayListProductos {
 
 // ATRIBUTOS 
 
-	private ArrayList <Producto> inventario = new ArrayList <Producto> ();
+	private static ArrayList <Producto> inventario = new ArrayList <Producto> ();
 
+
+// CONSTRUCTOR 
+	
+	public ArrayListProductos () {
+
+		Producto productoPrueba = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35);
+
+		Producto productoPrueba1 = new Producto (" ", "Paquete de Globos 1", "eee", 224.61f, 20);
+
+		Producto productoPrueba2 = new Producto (" ", "Paquete de Globos 2", "iii", 123.43f, 56);
+
+		Producto productoPrueba3 = new Producto (" ", "Paquete de Globos 3", "ooo", 321.51f, 66);
+
+		Producto productoPrueba4 = new Producto (" ", "Paquete de Globos 4", "uuu", 150.00f, 67);
+
+		agregarProducto(productoPrueba);
+		agregarProducto(productoPrueba1);
+		agregarProducto(productoPrueba2);
+		agregarProducto(productoPrueba3);
+		agregarProducto(productoPrueba4);
+
+	}
+
+// GETTERS 
+
+	public ArrayList <Producto> getInventario () {
+
+		return inventario;
+	}
 
 // METODOS (CRUD)
 

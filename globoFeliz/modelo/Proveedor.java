@@ -9,7 +9,7 @@ public class Proveedor {
 
 //atributos
 
-	private static Identificador identificador = new Identificador ("pv");
+	private Identificador identificador = new Identificador ("pv");
 
     private String idProveedor, nombreProveedor, telefonoProveedor, correoProveedor, direccionFiscal, rfcProveedor;
 

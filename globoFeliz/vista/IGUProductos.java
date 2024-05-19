@@ -95,7 +95,7 @@ public class IGUProductos {
 
     public void mensaje (String mensaje) {
 
-        System.out.println("\n" + mensaje + " - Presiona cualquier tecla para continuar");
+        System.out.printf("\n" + mensaje + "\n\n - Presiona cualquier tecla para continuar: ");
 
         lector.nextLine();
 

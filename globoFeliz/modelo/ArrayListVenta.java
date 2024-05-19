@@ -15,6 +15,28 @@ public class ArrayListVenta {
 
 	private ArrayList <Venta> ventas = new ArrayList <Venta> ();
 
+
+// CONSTRUCTOR 
+
+	public ArrayListVenta () {
+
+		Venta ventaPrueba = new Venta ("vt000", "19:25", "20-04-2024", 10.0f);
+
+		Venta ventaPrueba2 = new Venta (" ", " ", " ", 15.5f);
+
+		Venta ventaPrueba3 = new Venta (" ", " ", " ", 20.0f);
+
+		Venta ventaPrueba4 = new Venta (" ", " ", " ", 5.2f);
+
+		Venta ventaPrueba5 = new Venta (" ", " ", " ", 17.8f);
+
+		agregarVenta(ventaPrueba);
+		agregarVenta(ventaPrueba2);
+		agregarVenta(ventaPrueba3);
+		agregarVenta(ventaPrueba4);
+		agregarVenta(ventaPrueba5);
+
+	}
     
 // METODOS (CRUD)
 

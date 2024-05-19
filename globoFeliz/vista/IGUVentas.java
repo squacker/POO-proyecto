@@ -83,39 +83,39 @@ public class IGUVentas {
 		return idVenta;
     }
 
-    public ListaProductos leerProductosVendidos () {
+    // public ListaProductos leerProductosVendidos () {
 
-        String [] listaId = new String[10]; 
+    //     String [] listaId = new String[10]; 
 
-        String idProducto;
+    //     String idProducto;
 
-        int repetidor = 1;
-        int contador = 0;
+    //     int repetidor = 1;
+    //     int contador = 0;
 
-        while (repetidor == 1 && repetidor < 10) {
+    //     while (repetidor == 1 && repetidor < 10) {
             
-            System.out.printf ("Ingresa el id del producto: ");
+    //         System.out.printf ("Ingresa el id del producto: ");
 
-            idProducto = leerIdProducto();
+    //         idProducto = leerIdProducto();
 
-            listaId [contador] = idProducto;
+    //         listaId [contador] = idProducto;
 
-            System.out.printf ("Agregar otro producto (1)  Calcular Monto (0): ");
+    //         System.out.printf ("Agregar otro producto (1)  Calcular Monto (0): ");
 
-            repetidor = lector.nextInt();
+    //         repetidor = lector.nextInt();
 
-            limpiarBuffer();
+    //         limpiarBuffer();
 
-        }
+    //     }
 
-        ListaProductos productosVendidos = new ListaProductos(listaId);
+    //     ListaProductos productosVendidos = new ListaProductos(listaId);
 
-        return productosVendidos;
-    }
+    //     return productosVendidos;
+    // }
 
     public void mensaje (String mensaje) {
 
-        System.out.println("\n" + mensaje + " - Presiona cualquier tecla para continuar");
+        System.out.printf("\n" + mensaje + "\n\n - Presiona cualquier tecla para continuar: ");
 
         lector.nextLine();
 

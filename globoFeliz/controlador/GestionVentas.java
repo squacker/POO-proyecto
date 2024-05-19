@@ -18,38 +18,8 @@ public class GestionVentas {
 
 	private IGUVentas interfaz = new IGUVentas(); // VISTA
 
-    
-// CONSTRUCTOR 	
 
-	// sin parametros 
-
-	public GestionVentas () {
-
-		// DATOS INICIALES (PRUEBA)
-
-		Venta ventaPrueba = new Venta (null, " ", " ", " ", 0.0f);
-
-		Venta ventaPrueba2 = new Venta (null, " ", " ", " ", 0.0f);
-
-		Venta ventaPrueba3 = new Venta (null, " ", " ", " ", 0.0f);
-
-		Venta ventaPrueba4 = new Venta (null, " ", " ", " ", 0.0f);
-
-		Venta ventaPrueba5 = new Venta (null, " ", " ", " ", 0.0f);
-
-		ventas.agregarVenta(ventaPrueba);
-		ventas.agregarVenta(ventaPrueba2);
-		ventas.agregarVenta(ventaPrueba3);
-		ventas.agregarVenta(ventaPrueba4);
-		ventas.agregarVenta(ventaPrueba5);
-
-	}
-
-	// con parametros (pendiente)
-
-
-
-// METODO PRINCIPAL CLASE PRODUCTO
+// METODO PRINCIPAL CLASE VENTA
 
 	public void ejecutarControlador () {
 
@@ -75,7 +45,7 @@ public class GestionVentas {
 
 				case 1: // AGREGAR (CREATE)
 
-					ventaNueva = new Venta (interfaz.leerProductosVendidos(), " ", " ", " ", 0.0f);
+					ventaNueva = new Venta (" ", " ", " ", 0.0f);
 
 					ventas.agregarVenta(ventaNueva);
 					
