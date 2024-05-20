@@ -26,28 +26,39 @@ public class ArrayListVenta {
 
 	public ArrayListVenta (Venta ventaPrueba) {
 
-		ventaPrueba = new Venta ("vt000", "19:25", "20-04-2024", 10.0f);
+		 ArrayList <String> listaProductos = new ArrayList <String> ();
 
-		Venta ventaPrueba2 = new Venta (" ", " ", " ", 15.5f);
+		listaProductos.add("pt000");
+		listaProductos.add("pt000");
+		listaProductos.add("pt000");		
 
-		Venta ventaPrueba3 = new Venta (" ", " ", " ", 20.0f);
 
-		Venta ventaPrueba4 = new Venta (" ", " ", " ", 5.2f);
-
-		Venta ventaPrueba5 = new Venta (" ", " ", " ", 17.8f);
+		ventaPrueba = new Venta ("vt000", listaProductos, " ", " ", 0.0f);
 
 		agregarVenta(ventaPrueba);
-		agregarVenta(ventaPrueba2);
-		agregarVenta(ventaPrueba3);
-		agregarVenta(ventaPrueba4);
-		agregarVenta(ventaPrueba5);
+		
 	}
+
+// GETTERS 
+
+	public ArrayList <Venta> getVentas () {
+
+		return ventas;
+	}
+
+	public Venta getVenta (int posicion) {
+
+		return ventas.get(posicion);
+	}
+
     
 // METODOS (CRUD)
 
 	// CREATE
 
 	public boolean agregarVenta (Venta ventaNueva) {
+
+		ventaNueva.restarExistenciasProducto();
 
 		return ventas.add(ventaNueva);
 	}
@@ -93,15 +104,7 @@ public class ArrayListVenta {
 		}
 	}
 
-    public Venta getVenta (int posicion) {
-
-		return ventas.get(posicion);
-	}
-    
-    public int getTamaño () {
-
-		return ventas.size();
-	}
+   
     
     // DELETE
 

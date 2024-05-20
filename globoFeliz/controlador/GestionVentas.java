@@ -36,7 +36,7 @@ public class GestionVentas {
 
 		do {
 
-			opcion = interfaz.menuInventario();
+			opcion = interfaz.menuVentas();
 
 			// SWITCH MENU
 
@@ -47,9 +47,11 @@ public class GestionVentas {
 
 				case 1: // AGREGAR (CREATE)
 
-					ventaNueva = new Venta (" ", " ", " ", 0.0f);
+					ventaNueva = new Venta (" ", interfaz.leerIdProductosVendidos(), " ", " ", 0.0f);
 
 					ventas.agregarVenta(ventaNueva);
+
+					interfaz.mensaje("Total: " + ventaNueva.getMontoTotalVenta());
 					
 					break;
 

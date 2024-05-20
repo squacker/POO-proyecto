@@ -50,6 +50,11 @@ public class ArrayListProductos {
 		return inventario;
 	}
 
+	public Producto getProducto (int posicion) {
+
+		return inventario.get(posicion);
+	}
+
 // METODOS (CRUD)
 
 	// CREATE
@@ -99,17 +104,6 @@ public class ArrayListProductos {
 			}
 		}
 	}
-
-	public Producto getProducto (int posicion) {
-
-		return inventario.get(posicion);
-	}
-
-	public int getTamaño () {
-
-		return inventario.size();
-	}
-
 
 	// UPDATE
 

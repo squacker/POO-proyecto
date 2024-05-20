@@ -9,13 +9,17 @@ package globoFeliz.vista;
 import globoFeliz.modelo.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class IGUVentas {
 
+    ArrayListProductos inventario = new ArrayListProductos();
+
     private Scanner lector = new Scanner (System.in);
 
-    public int menuInventario() {
+    public int menuVentas() {
 
         limpiarConsola ();
 
@@ -63,9 +67,18 @@ public class IGUVentas {
 
         String idProducto;
 
-        System.out.printf("\nIngresa el id del producto: ");
+        do {
 
-        idProducto = lector.nextLine();    
+            System.out.printf("\nIngresa el id del producto: ");
+
+            idProducto = lector.nextLine();
+
+            if (inventario.buscarProducto(idProducto) == -1) {
+                
+                System.out.println("\nNo se encontro el producto");
+            }
+
+        } while (inventario.buscarProducto(idProducto) == -1);
 
 		return idProducto;
     }
@@ -82,35 +95,59 @@ public class IGUVentas {
 		return idVenta;
     }
 
-    // public ListaProductos leerProductosVendidos () {
+    public ArrayList <String> leerIdProductosVendidos () {
 
-    //     String [] listaId = new String[10]; 
 
-    //     String idProducto;
+        ArrayList <String> idProductos = new ArrayList <String> ();
 
-    //     int repetidor = 1;
-    //     int contador = 0;
+        int repetidor = 1;
 
-    //     while (repetidor == 1 && repetidor < 10) {
+        while (repetidor == 1) {
+
+            String idProducto;
             
-    //         System.out.printf ("Ingresa el id del producto: ");
+            idProducto = leerIdProducto();
 
-    //         idProducto = leerIdProducto();
+            idProductos.add(idProducto);
 
-    //         listaId [contador] = idProducto;
+            boolean opcionValida = false;
 
-    //         System.out.printf ("Agregar otro producto (1)  Calcular Monto (0): ");
+            do {
 
-    //         repetidor = lector.nextInt();
+                try {
 
-    //         limpiarBuffer();
+                    System.out.printf("\nAgregar otro producto (1)  Calcular Monto (0): ");
 
-    //     }
+                    repetidor = lector.nextInt();
 
-    //     ListaProductos productosVendidos = new ListaProductos(listaId);
+                    if (repetidor < 0 || repetidor > 1) {
 
-    //     return productosVendidos;
-    // }
+                        throw new IllegalArgumentException("La opción debe ser 0 o 1.");
+
+                    }
+
+                    opcionValida = true;
+
+                } catch (InputMismatchException e) {
+
+                    System.out.println("\nError: Debes ingresar un valor numérico entero.");
+
+                    limpiarBuffer();
+
+                } catch (IllegalArgumentException e) {
+
+                    System.out.println("\nError: " + e.getMessage());
+
+                }
+
+            } while (!opcionValida);
+                
+            limpiarBuffer();
+
+        }
+
+        return idProductos;
+    }
 
     public void mensaje (String mensaje) {
 
@@ -132,7 +169,7 @@ public class IGUVentas {
    
         Venta ventaEscrita;
 
-        for (int i = 0; i < ventas.getTamaño(); i ++){
+        for (int i = 0; i < ventas.getVentas().size(); i ++){
             
             ventaEscrita = ventas.getVenta(i);
 

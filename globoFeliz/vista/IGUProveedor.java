@@ -309,7 +309,7 @@ public class IGUProveedor {
 
 		Proveedor proveedorEscrito;
 
-		for (int i = 0; i < proveedores.getTamaño(); i ++){
+		for (int i = 0; i < proveedores.getProveedores().size(); i ++){
 		
 			proveedorEscrito = proveedores.getProveedor(i);
 

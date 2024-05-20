@@ -293,7 +293,7 @@ public class IGUProductos {
    
         Producto productoEscrito;
 
-        for (int i = 0; i < inventario.getTamaño(); i ++){
+        for (int i = 0; i < inventario.getInventario().size(); i ++){
             
             productoEscrito = inventario.getProducto(i);
 

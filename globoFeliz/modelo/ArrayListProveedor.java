@@ -45,6 +45,18 @@ public class ArrayListProveedor{
 
 	}
 
+// GETTERS 
+
+	public ArrayList <Proveedor> getProveedores () {
+
+		return proveedores;
+	}
+
+	public Proveedor getProveedor (int posicion) {
+
+		return proveedores.get(posicion);
+	}
+
 
 // METODOS (CRUD)
 
@@ -96,16 +108,7 @@ public class ArrayListProveedor{
 		}
 	}
 
-	public Proveedor getProveedor (int posicion) {
-
-		return proveedores.get(posicion);
-	}
-
-	public int getTamaño () {
-
-		return proveedores.size();
-	}
-
+	
 	
 	// UPDATE
 
