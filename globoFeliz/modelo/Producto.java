@@ -122,6 +122,7 @@ public class Producto {
 	}
 
 	// METODOS QUE INTERACTUAN CON CLASE VENTA 
+	// probablemente no se usen estos metodos
 
 	public void restarExistencias (int cantidadRestada) {
 

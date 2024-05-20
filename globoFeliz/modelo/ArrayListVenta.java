@@ -16,7 +16,7 @@ public class ArrayListVenta {
 	private static ArrayList <Venta> ventas = new ArrayList <Venta> ();
 
 
-// CONSTRUCTOR 
+// CONSTRUCTORES
 
 	public ArrayListVenta () {
 
@@ -26,7 +26,7 @@ public class ArrayListVenta {
 
 	public ArrayListVenta (Venta ventaPrueba) {
 
-		 ArrayList <String> listaProductos = new ArrayList <String> ();
+		ArrayList <String> listaProductos = new ArrayList <String> ();
 
 		listaProductos.add("pt000");
 		listaProductos.add("pt000");
@@ -120,7 +120,11 @@ public class ArrayListVenta {
 
 			if (contador > -1) {
 
-				Venta ventaBorrada = ventas.remove(contador);
+				Venta ventaBorrada;
+
+				ventaBorrada = ventas.remove(contador);
+
+				ventaBorrada.sumarExistenciasProductos();
 
 				return ventaBorrada != null;
 
