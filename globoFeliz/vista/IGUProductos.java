@@ -13,6 +13,8 @@ import java.util.Scanner;
 
 
 public class IGUProductos {
+
+    private ArrayListProveedor proveedores = new ArrayListProveedor ();
     
     private Scanner lector = new Scanner (System.in);
 
@@ -76,7 +78,9 @@ public class IGUProductos {
 
         nuevoProducto.setExistenciasProducto(this.leerExistenciasNuevo());
 
-        this.limpiarBuffer();
+        nuevoProducto.setIdProveedorProducto(this.leerIdProveedorNuevo());
+
+        
 
         return nuevoProducto;
     }
@@ -111,13 +115,13 @@ public class IGUProductos {
 
             try {
 
-                System.out.printf("\n1. Nombre   2. Descripcion   3. Precio   4. Existencias   0. Cancelar\n\n¿Qué dato deseas modificar?: ");
+                System.out.printf("\n1. Nombre   2. Descripcion   3. Precio   4. Existencias   5. Proveedor   0. Cancelar\n\n¿Qué dato deseas modificar?: ");
 
                 opcionModificar = lector.nextInt();
 
-                if (opcionModificar < 0 || opcionModificar > 4) {
+                if (opcionModificar < 0 || opcionModificar > 5) {
 
-                    throw new IllegalArgumentException("La opción debe estar entre 0 y 4.");
+                    throw new IllegalArgumentException("La opción debe estar entre 0 y 5.");
 
                 }
 
@@ -279,6 +283,39 @@ public class IGUProductos {
         } while (!datoValido);
 
         return existenciasNuevo;
+    }
+
+    public String leerIdProveedorNuevo () {
+
+        
+
+        String idProveedor = "";
+
+        boolean encontrado = false;
+
+        while (!encontrado) {
+
+            limpiarBuffer();
+
+            System.out.print("\nIngresa el id del proveedor: ");
+
+            idProveedor = lector.nextLine();
+
+            if (proveedores.buscarProveedor(idProveedor) != -1) {
+
+                encontrado = true;
+            
+            } else {
+
+                System.out.println("No se encontro el proveedor");
+            }
+            
+
+        } 
+
+        return idProveedor;
+		
+
     }
 
     public void limpiarBuffer () {

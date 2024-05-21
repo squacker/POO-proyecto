@@ -23,6 +23,64 @@ public class Abastecimiento {
 
         // metodos y constructores pendientes
 
+        Producto productoAbastecido; 
+
+        Proveedor provedorAsignado;
+
+        int unidades;
+
+        // float monto;
+
+
+        // CONSTRUCTORES
+
+        public AbastecimientoPorProducto (Producto producto, Proveedor proveedor, int unidades) {
+
+            setProductoAbastecido(producto);
+
+            setProvedorAsignado(proveedor);
+
+            setUnidades(unidades);
+
+        }
+
+        // SETTERS
+
+        public void setProductoAbastecido(Producto productoAbastecido) {
+
+            this.productoAbastecido = productoAbastecido;
+        }
+
+        public void setProvedorAsignado(Proveedor provedorAsignado) {
+         
+            this.provedorAsignado = provedorAsignado;
+        }
+
+        public void setUnidades(int unidades) {
+         
+            this.unidades = unidades;
+        }
+
+
+        // GETTERS
+
+        public Producto getProductoAbastecido() {
+         
+            return productoAbastecido;
+        }
+
+        public Proveedor getProvedorAsignado() {
+         
+            return provedorAsignado;
+        }
+
+        public int getUnidades() {
+         
+            return unidades;
+        }
+
+        
+         
     }
     
     public class  ListaAbastecimientosPorProducto {
@@ -31,7 +89,72 @@ public class Abastecimiento {
 
         private ArrayList <AbastecimientoPorProducto> abastecimientos = new ArrayList <AbastecimientoPorProducto> ();
 
-        // metodos y constructores pendientes
+
+        // CONSTRUCTOR
+
+        public ListaAbastecimientosPorProducto () {
+
+            setAbastecimientos();
+        }
+
+        // GETTERS 
+
+        ArrayList <AbastecimientoPorProducto> getAbastecimientos () {
+
+            return abastecimientos;
+        }
+
+        AbastecimientoPorProducto getAbastecimiento (int posicion) {
+
+            return abastecimientos.get(posicion);
+        }
+      
+
+        // METODOS 
+
+        void setAbastecimientos () {
+
+            for (int i = 0; i < listaIdProductos.size(); i++) {
+
+                Producto productoAbastecido = inventario.getProducto(inventario.buscarProducto(listaIdProductos.get(i)));
+
+                AbastecimientoPorProducto abastecimiento = new AbastecimientoPorProducto(productoAbastecido, productoAbastecido.getProveedorProducto(), unidadesProductos.get(i).intValue());
+
+                abastecimientos.add(abastecimiento);
+            }
+        }
+    
+        void restarExistencias () {
+
+            for (int i = 0; i < listaIdProductos.size(); i++) {
+
+				int existencias;
+
+				existencias = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getExistenciasProducto();
+
+				existencias --;
+
+				inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).setExistenciasProducto(existencias);
+
+			}
+
+        }
+
+        void sumarExistencias () {
+
+            for (int i = 0; i < listaIdProductos.size(); i++) {
+
+				int existencias;
+
+				existencias = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getExistenciasProducto();
+
+				existencias ++;
+
+				inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).setExistenciasProducto(existencias);
+
+			}
+            
+        }
 
     }
     
@@ -46,12 +169,11 @@ public class Abastecimiento {
 
     private ArrayList <String> listaIdProductos;
 
-    private ArrayList <String> listaIdProveedores;
-
-
     private String idAbastecimiento, horaAbastecimiento, fechaAbastecimiento;
 
-	private float montoTotalAbastecimiento;
+    private ArrayList <Integer> unidadesProductos;
+
+	// private float montoTotalAbastecimiento;
 
     private ListaAbastecimientosPorProducto productosAbastecidos = new ListaAbastecimientosPorProducto();
 
@@ -68,9 +190,18 @@ public class Abastecimiento {
 
     // con parametros 
 
-	public Abastecimiento (String id, ArrayList <String> listaProductos, ArrayList <String> listaProveedores, String hora, String fecha, float monto) {
+	public Abastecimiento (String id, ArrayList <String> listaProductos, ArrayList <Integer> listaUnidades, String hora, String fecha) {
 
-        
+        setIdAbastecimiento(id);
+
+        setListaIdProductos(listaProductos);
+
+        setUnidadesProductos(listaUnidades);
+
+        setHoraAbastecimiento(hora);
+
+        setFechaVenta(fecha);
+
     }
 
     
@@ -93,9 +224,9 @@ public class Abastecimiento {
 		this.listaIdProductos = listaProdu;
 	}
 
-    public void setListaIdProveedores (ArrayList <String> listaProve) {
+    public void setUnidadesProductos (ArrayList <Integer> unidades) {
 
-		this.listaIdProveedores = listaProve;
+		this.unidadesProductos = unidades;
 	}
 
     public void setHoraAbastecimiento (String hora) {
@@ -123,19 +254,6 @@ public class Abastecimiento {
 		}
 	}
 
-    public void setMontoTotalAbastecimiento(float monto) {
-
-		if (monto == 0.0f) {
-
-			this.montoTotalAbastecimiento = 0.0f;
-            // productosAbastecidos.calcularMontoTotal();
-
-		} else {
-
-			this.montoTotalAbastecimiento = monto;
-		}
-	}
-
 
 // GETTERS
 
@@ -149,11 +267,12 @@ public class Abastecimiento {
         return listaIdProductos;
     }
 
-    public ArrayList <String> getListaIdProveedores () {
+    public ArrayList <Integer> getUnidadesProductos () {
 
-        return listaIdProveedores;
+        return unidadesProductos;
     }
 
+   
     public String getHoraAbastecimiento() {
 
 		return horaAbastecimiento;
@@ -164,12 +283,7 @@ public class Abastecimiento {
 		return fechaAbastecimiento;
 	}
 
-	public float getMontoTotalAbastecimiento() {
-
-		return montoTotalAbastecimiento;
-	}
-
-
+    
 // METODOS
 
     public String imprimirDatos () {
@@ -181,12 +295,12 @@ public class Abastecimiento {
 
     public void restarExistenciasProducto () {
 
-		// productosAbastecidos.restarExistencias();
+		productosAbastecidos.restarExistencias();
 	}
 
 	public void sumarExistenciasProductos () {
 
-		// productosAbastecidos.sumarExistencias();
+		productosAbastecidos.sumarExistencias();
 	}
 
 
