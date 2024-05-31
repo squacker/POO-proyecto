@@ -25,12 +25,11 @@ class ControladorCentral {
 
     private static IGUPrincipal interfaz = new IGUPrincipal ();
 
-    private static GestionProveedores controladorProveedores = new GestionProveedores();
-
     private static GestionInventario controladorInventario = new GestionInventario();
 
     private static GestionVentas controladorVentas = new GestionVentas();
 
+    private static GestionProveedores controladorProveedores = new GestionProveedores();
 
 
 // FUNCION MAIN 

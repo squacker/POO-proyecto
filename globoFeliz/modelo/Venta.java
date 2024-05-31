@@ -9,16 +9,13 @@ import java.util.ArrayList;
 
 public class Venta {
 
-// CLASE INTERNA 
-
 	public class ListaProductos  {
-
-
-	// ATRIBUTOS
 
 		ArrayListProductos inventario = new ArrayListProductos();
 
-	// METODOS
+		ArrayList <Producto> prod = inventario.getInventario();
+
+		
 
 		float calcularMontoTotal() {
 
@@ -46,22 +43,6 @@ public class Venta {
 				existencias = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getExistenciasProducto();
 
 				existencias --;
-
-				inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).setExistenciasProducto(existencias);
-
-			}
-
-		}
-
-		void sumarExistencias () {
-
-			for (int i = 0; i < listaIdProductos.size(); i++) {
-
-				int existencias;
-
-				existencias = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getExistenciasProducto();
-
-				existencias ++;
 
 				inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).setExistenciasProducto(existencias);
 
@@ -98,7 +79,6 @@ public class Venta {
 		
 	}
 
-	
 // ATRIBUTOS
 
 	private Identificador identificador = new Identificador ("vt");
@@ -197,11 +177,6 @@ public class Venta {
 
 // GETTERS 
 
-	public ArrayList <String> getListaIdProductos () {
-
-		return listaIdProductos;
-	}
-
 	public String getIdVenta() {
 
 		return idVenta;
@@ -241,10 +216,4 @@ public class Venta {
 
 		productosVendidos.restarExistencias();
 	}
-
-	public void sumarExistenciasProductos () {
-
-		productosVendidos.sumarExistencias();
-	}
-	
 }

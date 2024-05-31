@@ -14,8 +14,6 @@ public class Producto {
 
 // ATRIBUTOS
 
-	private ArrayListProveedor proveedores = new ArrayListProveedor();
-
 	private Identificador identificador = new Identificador ("pt");
 
 	private String idProducto, nombreProducto, descripcionProducto;
@@ -23,10 +21,6 @@ public class Producto {
 	private int existenciasProducto;
 
 	private float precioProducto;
-
-	private String idProveedorProducto;
-
-	private Proveedor proveedorProducto;
 
 
 // CONSTRUCTORES
@@ -40,14 +34,13 @@ public class Producto {
 
 	// Con parametros 
 
-	public Producto (String id, String nombre, String descripcion, float precio, int existencias, String idProveedor) {
+	public Producto (String id, String nombre, String descripcion, float precio, int existencias) {
 
 		setIdProducto(id);
 		setNombreProducto(nombre);
 		setDescripcionProducto(descripcion);
 		setPrecioProducto(precio);
 		setExistenciasProducto(existencias);
-		setIdProveedorProducto(idProveedor);
 	}
 
 
@@ -85,20 +78,6 @@ public class Producto {
 		this.existenciasProducto = existencias;
 	}
 
-	public void setIdProveedorProducto (String idProveedor) {
-
-		this.idProveedorProducto = idProveedor;
-
-		setProveedorProducto(idProveedor);
-	}
-
-	public void setProveedorProducto (String idProveedor) {
-
-		int posicionProveedor = proveedores.buscarProveedor(idProveedor);
-
-		this.proveedorProducto = proveedores.getProveedor(posicionProveedor);
-	}
-
 
 // GETTERS
 
@@ -127,11 +106,6 @@ public class Producto {
 		return existenciasProducto;
 	}
 
-	public Proveedor getProveedorProducto () {
-
-		return proveedorProducto;
-	}
-
 
 // METODOS 
 
@@ -141,15 +115,13 @@ public class Producto {
 								"\nNombre: " + nombreProducto +
 								"\nDescripción: " + descripcionProducto +
 								"\nPrecio: " + precioProducto +
-								"\nExistencias: " + existenciasProducto +
-								"\nProveedor: " + proveedorProducto.getNombreProveedor() + " (" + idProveedorProducto + ")";
-		
+								"\nExistencias: " + existenciasProducto;
+
 		return datosProducto;
 
 	}
 
 	// METODOS QUE INTERACTUAN CON CLASE VENTA 
-	// probablemente no se usen estos metodos
 
 	public void restarExistencias (int cantidadRestada) {
 

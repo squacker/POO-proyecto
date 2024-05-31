@@ -88,7 +88,6 @@ public class GestionInventario {
 						String nuevaCadena;
 						float nuevoPrecio;
 						int nuevoExistencias;
-						String nuevoIdProveedor;
 
 						opcionModificar = interfaz.leerOpcionModificar();
 
@@ -124,13 +123,7 @@ public class GestionInventario {
 								
 								inventario.modificarProducto(id, opcionModificar, " ", 0.0f, nuevoExistencias);
 		
-								break;
-							
-							case 5: // MODIFICAR PROVEEDOR
-
-								nuevaCadena = interfaz.leerIdProveedorNuevo();
-
-								inventario.modificarProducto(id, opcionModificar, nuevaCadena, 0.0f , 0);
+								break;	
 							
 							
 							case 0: // CANCELAR
