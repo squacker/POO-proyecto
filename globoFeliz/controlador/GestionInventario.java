@@ -10,7 +10,6 @@ import globoFeliz.vista.*;
 
 public class GestionInventario {
 
-	
 // ATRIBUTOS
 
 	Producto producto;

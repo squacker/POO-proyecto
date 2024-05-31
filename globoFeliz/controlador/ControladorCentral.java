@@ -27,9 +27,12 @@ class ControladorCentral {
 
     private static GestionInventario controladorInventario = new GestionInventario();
 
+    private static GestionProveedores controladorProveedores = new GestionProveedores();
+
+    private static GestionAbastecimiento controladorAbastecimientos = new GestionAbastecimiento();
+
     private static GestionVentas controladorVentas = new GestionVentas();
 
-    private static GestionProveedores controladorProveedores = new GestionProveedores();
 
 
 // FUNCION MAIN 
@@ -58,6 +61,7 @@ class ControladorCentral {
 
                 case 3: // GESTIONAR ABASTECIMIENTO
 
+                    controladorAbastecimientos.ejecutarControlador();
                     break;
 
                 case 4: // GESTIONAR PROVEEDORES
