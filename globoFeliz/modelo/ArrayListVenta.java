@@ -1,7 +1,7 @@
 /*
 Clase: ArrayListVenta
-Autor: Fernando Cordero 
 */
+
 
 package globoFeliz.modelo;
 
@@ -18,28 +18,18 @@ public class ArrayListVenta {
 
 // CONSTRUCTOR 
 
+
+	// SIN PARAMETROS
+
 	public ArrayListVenta () {
 
+		leerVentasBD();
 		
-
-	}
-
-	public ArrayListVenta (Venta ventaPrueba) {
-
-		 ArrayList <String> listaProductos = new ArrayList <String> ();
-
-		listaProductos.add("pt000");
-		listaProductos.add("pt000");
-		listaProductos.add("pt000");		
-
-
-		ventaPrueba = new Venta ("vt000", listaProductos, " ", " ", 0.0f);
-
-		agregarVenta(ventaPrueba);
 		
 	}
 
-// GETTERS 
+
+	// GETTERS 
 
 	public ArrayList <Venta> getVentas () {
 
@@ -55,6 +45,23 @@ public class ArrayListVenta {
 // METODOS (CRUD)
 
 	// CREATE
+
+	private void leerVentasBD () {
+
+		Venta ventaBD;
+
+		ArrayList <String> listaIdProductos = new ArrayList <String> ();
+
+		listaIdProductos.add("pt000");
+		listaIdProductos.add("pt000");
+		listaIdProductos.add("pt000");		
+
+
+		ventaBD = new Venta ("vt000", listaIdProductos, " ", " ", 0.0f);
+
+		ventas.add(ventaBD);
+
+	}
 
 	public boolean agregarVenta (Venta ventaNueva) {
 
@@ -121,6 +128,8 @@ public class ArrayListVenta {
 			if (contador > -1) {
 
 				Venta ventaBorrada = ventas.remove(contador);
+
+				ventaBorrada.sumarExistenciasProducto();
 
 				return ventaBorrada != null;
 

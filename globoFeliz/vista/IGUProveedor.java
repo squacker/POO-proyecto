@@ -1,6 +1,5 @@
 /*
 Clase: IGUProveedor
-Autor: Alonso Martinez Juan Carlos
 */
 
 package globoFeliz.vista;
@@ -15,6 +14,11 @@ import java.util.Scanner;
 public class IGUProveedor {
     
     private Scanner lector = new Scanner (System.in);
+
+// METODOS
+
+
+    // ENTRADA
 
     public int menuProveedor() {
 
@@ -91,13 +95,6 @@ public class IGUProveedor {
         
 
 		return idProveedor;
-    }
-
-    public void mensaje (String mensaje) {
-
-        System.out.printf("\n" + mensaje + "\n\n - Presiona cualquier tecla para continuar: ");
-
-        lector.nextLine();
     }
 
     public int leerOpcionModificar() {
@@ -300,7 +297,11 @@ public class IGUProveedor {
         return rfcNuevo;
     }
 
-    public void limpiarBuffer () {
+
+    // SALIDA
+    public void mensaje (String mensaje) {
+
+        System.out.printf("\n" + mensaje + "\n\n - Presiona cualquier tecla para continuar: ");
 
         lector.nextLine();
     }
@@ -323,6 +324,8 @@ public class IGUProveedor {
 	}
 
 
+    // AUXILIAR 
+
     public void limpiarConsola () {
 
         try {
@@ -341,6 +344,9 @@ public class IGUProveedor {
 
     }
 
-}
+    public void limpiarBuffer () {
 
+        lector.nextLine();
+    }
     
+}

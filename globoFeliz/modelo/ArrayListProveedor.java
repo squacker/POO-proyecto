@@ -1,6 +1,5 @@
 /*
 Clase: ArrayListinventario
-Autor: Alonso Martinez Juan Carlos 
 */
 
 package globoFeliz.modelo;
@@ -18,32 +17,14 @@ public class ArrayListProveedor{
 
 // CONSTRUCTOR 
 
+	// SIN PARAMETROS
+
 	public ArrayListProveedor () {
 
-	}
-
-	public ArrayListProveedor (Proveedor proveedorPrueba) {
-
-		// DATOS INICIALES (PRUEBA)
-
-		proveedorPrueba = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
-
-		Proveedor proveedorPrueba1 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
-
-		Proveedor proveedorPrueba2 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
-
-		Proveedor proveedorPrueba3 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
-
-		Proveedor proveedorPrueba4 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
-
-
-		agregarProveedor(proveedorPrueba);
-		agregarProveedor(proveedorPrueba1);
-		agregarProveedor(proveedorPrueba2);
-		agregarProveedor(proveedorPrueba3);
-		agregarProveedor(proveedorPrueba4);
+		leerProveedoresBD();
 
 	}
+
 
 // GETTERS 
 
@@ -61,6 +42,27 @@ public class ArrayListProveedor{
 // METODOS (CRUD)
 
 	// CREATE
+
+	private void leerProveedoresBD () {
+
+		Proveedor proveedorBD1 = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		
+		Proveedor proveedorBD2 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+
+		Proveedor proveedorBD3 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+
+		Proveedor proveedorBD4 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+
+		Proveedor proveedorBD5 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+
+
+		proveedores.add(proveedorBD1);
+		proveedores.add(proveedorBD2);
+		proveedores.add(proveedorBD3);
+		proveedores.add(proveedorBD4);
+		proveedores.add(proveedorBD5);
+
+	}
 
 	public boolean agregarProveedor (Proveedor proveedorNuevo) {
 

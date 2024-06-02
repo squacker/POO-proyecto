@@ -1,6 +1,5 @@
 /*
 Clase: IGUProductos
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.vista;
@@ -18,6 +17,11 @@ public class IGUVentas {
     ArrayListProductos inventario = new ArrayListProductos();
 
     private Scanner lector = new Scanner (System.in);
+
+    
+// METODOS
+
+    // ENTRADA
 
     public int menuVentas() {
 
@@ -149,15 +153,12 @@ public class IGUVentas {
         return idProductos;
     }
 
+    
+    // SALIDA
+    
     public void mensaje (String mensaje) {
 
         System.out.printf("\n" + mensaje + "\n\n - Presiona cualquier tecla para continuar: ");
-
-        lector.nextLine();
-
-    }
-
-    public void limpiarBuffer () {
 
         lector.nextLine();
 
@@ -181,6 +182,15 @@ public class IGUVentas {
         lector.nextLine();
 
 	}
+
+    
+    // AUXILIAR
+    
+    public void limpiarBuffer () {
+
+        lector.nextLine();
+
+    }
 
     public void limpiarConsola () {
 

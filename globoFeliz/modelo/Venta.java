@@ -1,6 +1,5 @@
 /*
 Clase: Venta
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.modelo;
@@ -9,13 +8,9 @@ import java.util.ArrayList;
 
 public class Venta {
 
+	// SUBCLASE (AMIGA)
+
 	public class ListaProductos  {
-
-		ArrayListProductos inventario = new ArrayListProductos();
-
-		ArrayList <Producto> prod = inventario.getInventario();
-
-		
 
 		float calcularMontoTotal() {
 
@@ -32,25 +27,8 @@ public class Venta {
 			return sumaPrecios;
 
 		}
-		
-		void restarExistencias () {
-	
 
-			for (int i = 0; i < listaIdProductos.size(); i++) {
-
-				int existencias;
-
-				existencias = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getExistenciasProducto();
-
-				existencias --;
-
-				inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).setExistenciasProducto(existencias);
-
-			}
-
-		}
-
-		String imprimir () {
+		String imprimirVenta () {
 
 			String ventasEscritas = "";
 
@@ -80,6 +58,8 @@ public class Venta {
 	}
 
 // ATRIBUTOS
+
+	ArrayListProductos inventario = new ArrayListProductos();
 
 	private Identificador identificador = new Identificador ("vt");
 
@@ -205,7 +185,7 @@ public class Venta {
 		String datosVenta = "\nId: " + idVenta +
 								"\nHora: " + horaVenta +
 								"\nFecha: " + fechaVenta +
-								"\n\nProductos: \n" + productosVendidos.imprimir() + "\n\n" +
+								"\n\nProductos: \n" + productosVendidos.imprimirVenta() + "\n\n" +
 								"\nTotal: " + montoTotalVenta;
 
 		return datosVenta;
@@ -214,6 +194,33 @@ public class Venta {
 
 	public void restarExistenciasProducto () {
 
-		productosVendidos.restarExistencias();
+		for (int i = 0; i < listaIdProductos.size(); i++) {
+
+			int existencias;
+
+			existencias = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getExistenciasProducto();
+
+			existencias --;
+
+			inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).setExistenciasProducto(existencias);
+
+		}
+
 	}
+
+	public void sumarExistenciasProducto () {
+
+		for (int i = 0; i < listaIdProductos.size(); i++) {
+
+			int existencias;
+
+			existencias = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getExistenciasProducto();
+
+			existencias ++;
+
+			inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).setExistenciasProducto(existencias);
+
+		}
+	}
+
 }

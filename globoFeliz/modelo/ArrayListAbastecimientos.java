@@ -1,6 +1,5 @@
 /*
 Clase: ArrayListAbastecimientos
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.modelo;
@@ -15,18 +14,13 @@ public class ArrayListAbastecimientos {
     private static ArrayList <Abastecimiento> abastecimientos = new ArrayList <Abastecimiento> ();
 
 
-// CONSTRUCTOR 
+// CONSTRUCTOR
+
+	// SIN PARAMTEROS 
         
     public ArrayListAbastecimientos () {
-      
-    }
 
-    public ArrayListAbastecimientos (Abastecimiento abastecimientoPrueba) {
-
-        abastecimientoPrueba = new Abastecimiento("ab000", "pt000", " ", " ", 2);
-        
-        agregarAbastecimiento(abastecimientoPrueba);
-
+		leerAbastecimientosBD();
     }
 
 
@@ -46,6 +40,14 @@ public class ArrayListAbastecimientos {
 // METODOS (CRUD)
 
     // CREATE
+
+	private void leerAbastecimientosBD() {
+
+		Abastecimiento abastecimientoBD = new Abastecimiento("ab000", "pt000", " ", " ", 2);
+        
+        abastecimientos.add(abastecimientoBD);
+
+	}
 
 	public boolean agregarAbastecimiento (Abastecimiento abastecimientoNuevo) {
 
@@ -110,6 +112,8 @@ public class ArrayListAbastecimientos {
 			if (contador > -1) {
 
 				Abastecimiento abastecimientoBorrado = abastecimientos.remove(contador);
+
+				abastecimientoBorrado.restarExistenciasProducto();
 
 				return abastecimientoBorrado != null;
 

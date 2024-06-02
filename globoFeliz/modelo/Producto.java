@@ -1,6 +1,5 @@
 /*
 Clase: Producto
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.modelo;
@@ -9,8 +8,8 @@ public class Producto {
 
 // CONSTANTES
 
-	public final int EXISTENCIAS_MINIMAS = 5;
-	public final int EXISTENCIAS_MAXIMAS = 50;
+	// public final int EXISTENCIAS_MINIMAS = 5;
+	// public final int EXISTENCIAS_MAXIMAS = 50;
 
 // ATRIBUTOS
 
@@ -120,8 +119,6 @@ public class Producto {
 		return datosProducto;
 
 	}
-
-	// METODOS QUE INTERACTUAN CON CLASE VENTA 
 
 	public void restarExistencias (int cantidadRestada) {
 

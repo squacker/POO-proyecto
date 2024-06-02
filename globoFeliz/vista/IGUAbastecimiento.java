@@ -1,6 +1,5 @@
 /*
 Clase: IGUProductos
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.vista;
@@ -14,10 +13,17 @@ import java.util.Scanner;
 
 public class IGUAbastecimiento {
 
+// ATRIBUTOS
+
     ArrayListProductos inventario = new ArrayListProductos();
 
     private Scanner lector = new Scanner (System.in);
 
+
+// METODOS
+
+
+    // ENTRADA
 
     public int menuAbastecimiento() {
 
@@ -65,7 +71,7 @@ public class IGUAbastecimiento {
     
     public Abastecimiento leerDatosAbastecimiento () {
 
-        Abastecimiento nuevoAbastecimiento = new Abastecimiento();
+        Abastecimiento nuevoAbastecimiento = new Abastecimiento(" ", " ", " ", " ", 0);
 
         nuevoAbastecimiento.setIdProducto(this.leerIdProducto());
 
@@ -110,15 +116,45 @@ public class IGUAbastecimiento {
 
     public int leerUnidades() {
 
-        int unidades;
+        int unidades = 0;
+        boolean datoValido = false;
 
-        System.out.printf("Ingrese las unidades abastecidas: ");
+        do {
 
-        unidades = lector.nextInt();
+            System.out.printf("Ingrese las unidades abastecidas: ");
+
+            try {
+
+                unidades = lector.nextInt();
+
+                if (unidades <= 0) {
+
+                    throw new IllegalArgumentException("Debes ingresar un numero mayor a 0.");
+                
+                }
+                                
+                datoValido = true;
+            
+            } catch (InputMismatchException exepcion) {
+                
+                System.out.println("Error: Debes ingresar un valor numérico entero.");
+                
+                this.limpiarBuffer();
+            
+            } catch (IllegalArgumentException exepcion) {
+                
+                System.out.println("Error: " + exepcion.getMessage());
+            
+            }
+
+        } while (!datoValido);
 
         return unidades;
-        
+
     }
+
+
+    // SALIDA
 
     public void mensaje (String mensaje) {
 
@@ -147,6 +183,9 @@ public class IGUAbastecimiento {
         lector.nextLine();
 
 	}
+
+    
+    // AUXILIARES
 
     public void limpiarBuffer () {
 

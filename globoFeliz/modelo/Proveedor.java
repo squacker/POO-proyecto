@@ -1,26 +1,27 @@
 /*
 Clase: Proveedor
-Autor: Alonso Martinez Juan Carlos
 */
 
 package globoFeliz.modelo;
 
 public class Proveedor {
 
-//atributos
+// ATRIBUTOS
 
 	private Identificador identificador = new Identificador ("pv");
 
     private String idProveedor, nombreProveedor, telefonoProveedor, correoProveedor, direccionFiscal, rfcProveedor;
 
-//Constructor 
+// CONSTRUCTOR 
+
+    // SIN PARAMETROS
 
     public Proveedor(){
 
 		setIdProovedor(" ");
 	}
 
-// Con parametros 
+    // CON PARAMETROS 
 
 	public Proveedor(String id, String nombreProveedor, String correoProveedor, String telefonoProveedor, String direccionFiscal, String rfcProveedor ) {
 
@@ -33,7 +34,7 @@ public class Proveedor {
 
 	}
 
-//Setters
+// SETTERS
 
     public void setIdProovedor(String id){
 

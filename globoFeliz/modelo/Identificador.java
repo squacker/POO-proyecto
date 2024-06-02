@@ -1,10 +1,7 @@
 /* 
 Clase: Identificador
-(Clase Auxiliar: Esta clase sirve para generar un id aleatorio de 3 digitos,
+(Esta clase sirve para generar un id aleatorio de 3 digitos,
 es usada para generar identificadores para las clases principales)
-
-Autor: Fernando Cordero
-
 */
 
 package globoFeliz.modelo;

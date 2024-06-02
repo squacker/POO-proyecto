@@ -1,9 +1,7 @@
 /* 
 Clase: Hora
-(Clase Auxiliar: Esta clase sirve para registrar la hora actual,
+(Esta clase sirve para registrar la hora actual,
 es usada para registrar la hora de ventas y de abastecimientos) 
-
-Autor: Fernando Cordero
 */
 
 package globoFeliz.modelo;

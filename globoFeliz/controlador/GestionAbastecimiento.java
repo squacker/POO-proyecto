@@ -1,6 +1,5 @@
 /*
 Clase: GestionAbastecimiento
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.controlador;
@@ -12,9 +11,7 @@ public class GestionAbastecimiento {
 
 // ATRIBUTOS
 
-    Abastecimiento abastecimiento;
-
-    private ArrayListAbastecimientos abastecimientos = new ArrayListAbastecimientos(abastecimiento);
+    private ArrayListAbastecimientos abastecimientos = new ArrayListAbastecimientos();
 
     private IGUAbastecimiento interfaz = new IGUAbastecimiento();
 
@@ -44,7 +41,7 @@ public class GestionAbastecimiento {
 
                     break;
 
-                case 4: // ELIMINAR (DELETE)
+                case 2: // ELIMINAR (DELETE)
 
                     id = interfaz.leerIdAbastecimiento();
 
@@ -60,7 +57,7 @@ public class GestionAbastecimiento {
 
                     break;
 
-                case 5: // BUSCAR (READ)
+                case 3: // BUSCAR (READ)
 
                     id = interfaz.leerIdAbastecimiento();
 
@@ -76,10 +73,10 @@ public class GestionAbastecimiento {
 
                         interfaz.mensaje(abastecimientoEscrito.imprimirDatos());
                     }
-
+ 
                     break;
 
-                case 6: // LISTAR (READ)
+                case 4: // LISTAR (READ)
 
                     interfaz.escribirAbastecimientos(abastecimientos);
 

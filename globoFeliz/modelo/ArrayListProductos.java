@@ -1,6 +1,5 @@
 /*
 Clase: ArrayListProductos
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.modelo;
@@ -20,28 +19,13 @@ public class ArrayListProductos {
 	
 	public ArrayListProductos () {
 
-		
 	}
 
-	public ArrayListProductos (Producto productoPrueba) {
+	public ArrayListProductos (String db) {
 
-		productoPrueba = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35);
-
-		Producto productoPrueba1 = new Producto (" ", "Paquete de Globos 1", "eee", 224.61f, 20);
-
-		Producto productoPrueba2 = new Producto (" ", "Paquete de Globos 2", "iii", 123.43f, 56);
-
-		Producto productoPrueba3 = new Producto (" ", "Paquete de Globos 3", "ooo", 321.51f, 66);
-
-		Producto productoPrueba4 = new Producto (" ", "Paquete de Globos 4", "uuu", 150.00f, 67);
-
-		agregarProducto(productoPrueba);
-		agregarProducto(productoPrueba1);
-		agregarProducto(productoPrueba2);
-		agregarProducto(productoPrueba3);
-		agregarProducto(productoPrueba4);
-
+		leerProductosBD();
 	}
+
 
 // GETTERS 
 
@@ -56,6 +40,27 @@ public class ArrayListProductos {
 	}
 
 // METODOS (CRUD)
+
+	private void leerProductosBD () {
+
+		Producto productoBD1 = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35);
+
+		Producto productoBD2 = new Producto (" ", "Paquete de Globos 1", "eee", 224.61f, 20);
+
+		Producto productoBD3 = new Producto (" ", "Paquete de Globos 2", "iii", 123.43f, 56);
+
+		Producto productoBD4 = new Producto (" ", "Paquete de Globos 3", "ooo", 321.51f, 66);
+
+		Producto productoBD5 = new Producto (" ", "Paquete de Globos 4", "uuu", 150.00f, 67);
+
+		inventario.add(productoBD1);
+		inventario.add(productoBD2);
+		inventario.add(productoBD3);
+		inventario.add(productoBD4);
+		inventario.add(productoBD5);
+
+
+	}
 
 	// CREATE
 

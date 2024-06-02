@@ -1,6 +1,5 @@
 /*
 Clase: IGUPrincipal
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.vista;
@@ -10,9 +9,13 @@ import java.util.Scanner;
 
 public class IGUPrincipal {
 
+    // ATRIBUTOS
 
     private Scanner lector = new Scanner (System.in);
 
+ // METODOS
+
+    // ENTRADA
 
     public int menuPrincipal() {
 
@@ -58,6 +61,9 @@ public class IGUPrincipal {
         return opcion;
     }
 
+
+    // AUXILIAR
+
     public void limpiarConsola () {
 
         try {
@@ -75,4 +81,5 @@ public class IGUPrincipal {
         }
 
     }
+
 }

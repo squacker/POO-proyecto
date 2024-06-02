@@ -131,7 +131,7 @@ public class Abastecimiento {
         String datosAbastecimiento = "\nId: " + idAbastecimiento +
                                 "\nHora: " + horaAbastecimiento +
                                 "\nFecha: " + fechaAbastecimiento +
-                                "\n\nProducto: \n" + idProducto + "\n\n" +
+                                "\n\nProducto: " + inventario.getProducto(inventario.buscarProducto(idProducto)).getNombreProducto() +
                                 "\nUnidades: " + unidades;
 
         return datosAbastecimiento;
@@ -141,6 +141,11 @@ public class Abastecimiento {
     public void sumarExistenciasProducto () {
 
         inventario.getProducto(inventario.buscarProducto(idProducto)).sumarExistencias(unidades);
+    }
+
+    public void restarExistenciasProducto () {
+
+        inventario.getProducto(inventario.buscarProducto(idProducto)).restarExistencias(unidades);
     }
 
 }

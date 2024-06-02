@@ -1,6 +1,5 @@
 /*
 Clase: GestionInventario
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.controlador;
@@ -12,9 +11,7 @@ public class GestionInventario {
 
 // ATRIBUTOS
 
-	Producto producto;
-
-	private ArrayListProductos inventario = new ArrayListProductos(producto); // MODELO
+	private ArrayListProductos inventario = new ArrayListProductos("db"); // MODELO
 
 	private IGUProductos interfaz = new IGUProductos(); // VISTA
 

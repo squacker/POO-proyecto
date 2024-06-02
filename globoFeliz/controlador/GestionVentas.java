@@ -1,6 +1,5 @@
 /*
 Clase: ControladorVentas
-Autor: Fernando Cordero 
 */
 
 package globoFeliz.controlador;
@@ -14,9 +13,8 @@ public class GestionVentas {
     
 // ATRIBUTOS
 
-	Venta venta; 
 
-	private ArrayListVenta ventas = new ArrayListVenta(venta); // MODELO
+	private ArrayListVenta ventas = new ArrayListVenta(); // MODELO
 
 	private IGUVentas interfaz = new IGUVentas(); // VISTA
 

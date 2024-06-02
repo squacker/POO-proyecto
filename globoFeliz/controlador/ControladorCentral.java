@@ -1,6 +1,5 @@
 /*
 Clase: ControladorCentral
-Autor: Fernando Cordero
 */
 
 package globoFeliz.controlador;
@@ -8,17 +7,6 @@ package globoFeliz.controlador;
 import globoFeliz.vista.*;
 
 class ControladorCentral {
-
-// OPCIONES MENU 
-
-    public enum FUNCIONES {
-        PRODUCTOS,
-        VENTAS,
-        ABASTECIMIENTO,
-        CLIENTES,
-        PROVEEDORES,
-        SALIR
-    }
 
 
 // ATRIBUTOS

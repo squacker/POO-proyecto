@@ -1,6 +1,5 @@
 /*
 Clase: GestionProveedores
-Autor: Alonso Martienz Juan Carlos
 */
 
 package globoFeliz.controlador;
@@ -12,9 +11,7 @@ public class GestionProveedores {
 
 	// ATRIBUTOS
 
-	Proveedor proveedor;
-
-	private ArrayListProveedor proveedores = new ArrayListProveedor(proveedor); // MODELO
+	private ArrayListProveedor proveedores = new ArrayListProveedor(); // MODELO
 
 	private IGUProveedor interfaz = new IGUProveedor(); // VISTA
 
