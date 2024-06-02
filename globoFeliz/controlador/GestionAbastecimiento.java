@@ -11,7 +11,7 @@ public class GestionAbastecimiento {
 
 // ATRIBUTOS
 
-    private ArrayListAbastecimientos abastecimientos = new ArrayListAbastecimientos();
+    private ArrayListAbastecimientos abastecimientos = new ArrayListAbastecimientos("db");
 
     private IGUAbastecimiento interfaz = new IGUAbastecimiento();
 

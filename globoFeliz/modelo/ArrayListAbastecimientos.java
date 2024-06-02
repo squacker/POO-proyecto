@@ -20,6 +20,10 @@ public class ArrayListAbastecimientos {
         
     public ArrayListAbastecimientos () {
 
+    }
+
+	public ArrayListAbastecimientos (String db) {
+
 		leerAbastecimientosBD();
     }
 

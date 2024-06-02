@@ -43,21 +43,23 @@ public class ArrayListProductos {
 
 	private void leerProductosBD () {
 
-		Producto productoBD1 = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35);
+		Producto productoBD1 = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35, "pv000");
 
-		Producto productoBD2 = new Producto (" ", "Paquete de Globos 1", "eee", 224.61f, 20);
+		Producto productoBD2 = new Producto (" ", "Paquete de Globos 1", "eee", 224.61f, 20, "pv000");
 
-		Producto productoBD3 = new Producto (" ", "Paquete de Globos 2", "iii", 123.43f, 56);
+		Producto productoBD3 = new Producto (" ", "Paquete de Globos 2", "iii", 123.43f, 56, "pv000");
 
-		Producto productoBD4 = new Producto (" ", "Paquete de Globos 3", "ooo", 321.51f, 66);
+		Producto productoBD4 = new Producto (" ", "Paquete de Globos 3", "ooo", 321.51f, 66, "pv000");
 
-		Producto productoBD5 = new Producto (" ", "Paquete de Globos 4", "uuu", 150.00f, 67);
+		Producto productoBD5 = new Producto (" ", "Paquete de Globos 4", "uuu", 150.00f, 67, "pv000");
 
 		inventario.add(productoBD1);
 		inventario.add(productoBD2);
 		inventario.add(productoBD3);
 		inventario.add(productoBD4);
 		inventario.add(productoBD5);
+
+
 
 
 	}
@@ -217,6 +219,14 @@ public class ArrayListProductos {
 
 		}
 
+	}
+
+	public void setProveedorAsignado () {
+
+		for (Producto producto : inventario) {
+
+			producto.setProveedorAsignado();
+		}
 	}
 
 

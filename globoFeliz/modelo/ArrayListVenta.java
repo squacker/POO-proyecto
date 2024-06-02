@@ -23,8 +23,12 @@ public class ArrayListVenta {
 
 	public ArrayListVenta () {
 
-		leerVentasBD();
 		
+	}
+
+	public ArrayListVenta (String db) {
+
+		leerVentasBD();
 		
 	}
 

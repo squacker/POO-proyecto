@@ -11,7 +11,7 @@ public class GestionProveedores {
 
 	// ATRIBUTOS
 
-	private ArrayListProveedor proveedores = new ArrayListProveedor(); // MODELO
+	private ArrayListProveedor proveedores = new ArrayListProveedor("db"); // MODELO
 
 	private IGUProveedor interfaz = new IGUProveedor(); // VISTA
 

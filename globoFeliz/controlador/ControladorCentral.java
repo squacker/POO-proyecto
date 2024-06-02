@@ -5,6 +5,7 @@ Clase: ControladorCentral
 package globoFeliz.controlador;
 
 import globoFeliz.vista.*;
+import globoFeliz.modelo.*;
 
 class ControladorCentral {
 
@@ -21,12 +22,20 @@ class ControladorCentral {
 
     private static GestionVentas controladorVentas = new GestionVentas();
 
+    private ArrayListProveedor proveedores = new ArrayListProveedor();
 
+    private ArrayListProductos inventario = new ArrayListProductos();
+
+
+    public ControladorCentral () {
+
+        generarRelacionesEntreClases();
+    }
 
 // FUNCION MAIN 
 
     public static void main(String[] args) {
-        
+
         int opcion;
 
         do {
@@ -70,4 +79,10 @@ class ControladorCentral {
     }
 
      
+    public void generarRelacionesEntreClases () {
+
+        proveedores.setProductosAsignados();
+        inventario.setProveedorAsignado();
+
+    }
 }

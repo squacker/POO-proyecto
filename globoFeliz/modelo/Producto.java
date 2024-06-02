@@ -13,13 +13,19 @@ public class Producto {
 
 // ATRIBUTOS
 
+	private ArrayListProveedor proveedores = new ArrayListProveedor();
+
 	private Identificador identificador = new Identificador ("pt");
 
-	private String idProducto, nombreProducto, descripcionProducto;
+	private String idProducto, idProveedorAsignado, nombreProducto, descripcionProducto;
 
 	private int existenciasProducto;
 
 	private float precioProducto;
+
+	private Proveedor proveedorAsignado;
+
+	
 
 
 // CONSTRUCTORES
@@ -33,13 +39,15 @@ public class Producto {
 
 	// Con parametros 
 
-	public Producto (String id, String nombre, String descripcion, float precio, int existencias) {
+	public Producto (String id, String nombre, String descripcion, float precio, int existencias, String idProveedor) {
 
 		setIdProducto(id);
 		setNombreProducto(nombre);
 		setDescripcionProducto(descripcion);
 		setPrecioProducto(precio);
 		setExistenciasProducto(existencias);
+		setIdProveedorAsignado(idProveedor);
+		
 	}
 
 
@@ -77,6 +85,18 @@ public class Producto {
 		this.existenciasProducto = existencias;
 	}
 
+	public void setIdProveedorAsignado (String idProveedor) {
+
+		this.idProveedorAsignado = idProveedor;
+	}
+
+	public void setProveedorAsignado() {
+
+		this.proveedorAsignado = proveedores.getProveedor(proveedores.buscarProveedor(this.idProveedorAsignado));
+
+	
+	}
+
 
 // GETTERS
 
@@ -105,6 +125,16 @@ public class Producto {
 		return existenciasProducto;
 	}
 
+	public String getIdProveedorAsignado () {
+
+		return idProveedorAsignado;
+	}
+
+	public Proveedor getProveedorAsignado () {
+
+		return proveedorAsignado;
+	}
+
 
 // METODOS 
 
@@ -114,7 +144,8 @@ public class Producto {
 								"\nNombre: " + nombreProducto +
 								"\nDescripción: " + descripcionProducto +
 								"\nPrecio: " + precioProducto +
-								"\nExistencias: " + existenciasProducto;
+								"\nExistencias: " + existenciasProducto +
+								"\nProveedor: " + proveedorAsignado.getNombreProveedor();
 
 		return datosProducto;
 

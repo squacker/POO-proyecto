@@ -14,7 +14,7 @@ public class GestionVentas {
 // ATRIBUTOS
 
 
-	private ArrayListVenta ventas = new ArrayListVenta(); // MODELO
+	private ArrayListVenta ventas = new ArrayListVenta("db"); // MODELO
 
 	private IGUVentas interfaz = new IGUVentas(); // VISTA
 
