@@ -32,6 +32,7 @@ public class GestionInventario {
 		do {
 
 			opcion = interfaz.menuInventario();
+			inventario.setProveedorAsignado();
 
 			// SWITCH MENU
 
@@ -118,6 +119,14 @@ public class GestionInventario {
 								nuevoExistencias = interfaz.leerExistenciasNuevo();
 								
 								inventario.modificarProducto(id, opcionModificar, " ", 0.0f, nuevoExistencias);
+		
+								break;	
+
+							case 5: // MODIFICAR PROVEEDOR
+								
+								nuevaCadena = interfaz.leerIdProveedorAsignado();
+								
+								inventario.modificarProducto(id, opcionModificar, nuevaCadena, 0.0f, 0);
 		
 								break;	
 							

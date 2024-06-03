@@ -180,6 +180,13 @@ public class ArrayListProductos {
 						productoModificado.setExistenciasProducto(modificaExistencias);;
 
 					    break;	
+
+					case 5:
+						
+						productoModificado.setIdProveedorAsignado(modificaCadena);
+						productoModificado.setProveedorAsignado();
+
+					    break;	
 					
 					default:
 						break;

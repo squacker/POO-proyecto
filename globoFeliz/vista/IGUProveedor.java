@@ -107,9 +107,12 @@ public class IGUProveedor {
 
             try {
 
-                System.out.printf("\n1. Nombre   \n2. Telefono   \n3. Correo Electronico   \n4. Dirección Fiscal   \n5.RFC    0. Cancelar\n\n¿Qué dato deseas modificar?: ");
+                
+                System.out.printf("\n1. Nombre   \n2. Telefono   \n3. Correo Electronico   \n4. Dirección Fiscal   \n5.RFC    \n0. Cancelar\n\n¿Qué dato deseas modificar?: ");
 
                 opcionModificar = lector.nextInt();
+
+                this.limpiarBuffer();
 
                 if (opcionModificar < 0 || opcionModificar > 5) {
 
@@ -123,7 +126,7 @@ public class IGUProveedor {
 
                 System.out.println("Error: Debes ingresar un valor numérico entero.");
 
-                this.limpiarBuffer();
+               
 
             } catch (IllegalArgumentException exepcion) {
 

@@ -10,13 +10,9 @@ public class Proveedor {
 
 // ATRIBUTOS
 
-    private ArrayListProductos inventario = new ArrayListProductos("db"); 
+    private ArrayListProductos inventario = new ArrayListProductos(); 
 
 	private Identificador identificador = new Identificador ("pv");
-
-    private ArrayList <String> idProductosAsignados;
-
-    private ArrayList <Producto> productosAsignados;
 
     private String idProveedor, nombreProveedor, telefonoProveedor, correoProveedor, direccionFiscal, rfcProveedor;
 
@@ -31,7 +27,7 @@ public class Proveedor {
 
     // CON PARAMETROS 
 
-	public Proveedor(String id, String nombreProveedor, String correoProveedor, String telefonoProveedor, String direccionFiscal, String rfcProveedor, ArrayList <String> idProductos) {
+	public Proveedor(String id, String nombreProveedor, String correoProveedor, String telefonoProveedor, String direccionFiscal, String rfcProveedor) {
 
 		setIdProovedor(id);
 		setNombreProveedor(nombreProveedor);
@@ -39,7 +35,6 @@ public class Proveedor {
         setCorreoProveedor(correoProveedor);
         setDireccionFiscal(direccionFiscal);
         setRfcProveedor(rfcProveedor);
-        setIdProductosAsignados(idProductos);
 
 	}
 
@@ -89,19 +84,6 @@ public class Proveedor {
 
     }
 
-    public void setIdProductosAsignados (ArrayList <String> idProductos) {
-
-        this.idProductosAsignados = idProductos;
-    }
-
-    public void setProductosAsignados () {
-        
-        for (String idProducto : idProductosAsignados) {
-
-            productosAsignados.add(inventario.getProducto(inventario.buscarProducto(idProducto)));
-        }
-
-    }
 //GETTERS
 
     public String getIdProveedor(){
@@ -140,30 +122,17 @@ public class Proveedor {
 
     }
 
-    public ArrayList <Producto> getProductosAsignados () {
-
-        return  productosAsignados;
-    }
+ 
 // METODOS 
 
     public String imprimirDatos () {
-
-        String cadenaProductosAsignados = " ";
-
-        for (Producto productoEscrito : productosAsignados) {
-
-            cadenaProductosAsignados += "\n";
-
-            cadenaProductosAsignados += productoEscrito.getNombreProducto();
-        }
 
 		String datosProducto = "\nId: " + idProveedor +
 								"\nNombre: " + nombreProveedor +
 								"\nTeléfono: " + telefonoProveedor +
 								"\nCorreo electrino: " + correoProveedor +
                                 "\nDirreción Fiscal: " + direccionFiscal +
-								"\nRFC: " + rfcProveedor +
-                                "\n\nProductos Asignados : " + cadenaProductosAsignados;
+								"\nRFC: " + rfcProveedor ;
 
 		return datosProducto;
 

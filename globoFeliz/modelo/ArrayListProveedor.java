@@ -52,19 +52,17 @@ public class ArrayListProveedor{
 
 		ArrayList <String> productos = new ArrayList <String> ();
 
-		productos.add("pt000");
-		// productos.add("pt000");
-		// productos.add("pt000");
-
-		Proveedor proveedorBD1 = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3", productos);
 		
-		Proveedor proveedorBD2 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3", productos);
 
-		Proveedor proveedorBD3 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3", productos);
+		Proveedor proveedorBD1 = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		
+		Proveedor proveedorBD2 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor proveedorBD4 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3", productos);
+		Proveedor proveedorBD3 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
-		Proveedor proveedorBD5 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3", productos);
+		Proveedor proveedorBD4 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+
+		Proveedor proveedorBD5 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
 
 
 		proveedores.add(proveedorBD1);
@@ -235,15 +233,6 @@ public class ArrayListProveedor{
 
 		}
 
-	}
-
-
-	public void setProductosAsignados () {
-
-		for (Proveedor proveedor : proveedores) {
-
-			proveedor.setProductosAsignados();
-		}
 	}
 
 

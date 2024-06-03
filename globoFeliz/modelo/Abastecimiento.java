@@ -9,6 +9,8 @@ public class Abastecimiento {
 
     ArrayListProductos inventario = new ArrayListProductos();
 
+    ArrayListProveedor proveedores = new ArrayListProveedor();
+
 // ATRIBUTOS
     
     private Identificador identificador = new Identificador ("ab");
@@ -132,7 +134,8 @@ public class Abastecimiento {
                                 "\nHora: " + horaAbastecimiento +
                                 "\nFecha: " + fechaAbastecimiento +
                                 "\n\nProducto: " + inventario.getProducto(inventario.buscarProducto(idProducto)).getNombreProducto() +
-                                "\nUnidades: " + unidades;
+                                "\nUnidades: " + unidades +
+                                "\nProveedor: " + proveedores.getProveedores().get(proveedores.buscarProveedor(inventario.getProducto(inventario.buscarProducto(idProducto)).getIdProveedorAsignado())).getNombreProveedor();
 
         return datosAbastecimiento;
 
