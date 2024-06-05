@@ -49,9 +49,6 @@ public class ArrayListProveedor{
 	// CREATE
 
 	private void leerProveedoresBD () {
-
-		ArrayList <String> productos = new ArrayList <String> ();
-
 		
 
 		Proveedor proveedorBD1 = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");

@@ -4,13 +4,10 @@ Clase: Proveedor
 
 package globoFeliz.modelo;
 
-import java.util.ArrayList;
-
 public class Proveedor {
 
 // ATRIBUTOS
 
-    private ArrayListProductos inventario = new ArrayListProductos(); 
 
 	private Identificador identificador = new Identificador ("pv");
 
@@ -137,7 +134,5 @@ public class Proveedor {
 		return datosProducto;
 
 	}
-
-    // PENDIENTES LOS METODOS QUE INTERACTUAN CON CLASE ABASTECIMIENTO 
 
 }
