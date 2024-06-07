@@ -1,1 +1,0 @@
-Subir imagen del diagrama
