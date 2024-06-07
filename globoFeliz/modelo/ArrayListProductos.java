@@ -41,17 +41,19 @@ public class ArrayListProductos {
 
 // METODOS (CRUD)
 
+	// CREATE
+
 	private void leerProductosBD () {
 
-		Producto productoBD1 = new Producto ("pt000", "Paquete de Globos 0", "aaa", 115.41f, 35, "pv000");
+		Producto productoBD1 = new Producto ("pt000", "Globos Payaso", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 115.41f, 35, "pv000");
 
-		Producto productoBD2 = new Producto (" ", "Paquete de Globos 1", "eee", 224.61f, 20, "pv000");
+		Producto productoBD2 = new Producto ("pt125", "Globos Kalu", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 224.61f, 20, "pv526");
 
-		Producto productoBD3 = new Producto (" ", "Paquete de Globos 2", "iii", 123.43f, 56, "pv000");
+		Producto productoBD3 = new Producto ("pt567", "Globos blogos", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 123.43f, 46, "pv987");
 
-		Producto productoBD4 = new Producto (" ", "Paquete de Globos 3", "ooo", 321.51f, 66, "pv000");
+		Producto productoBD4 = new Producto ("pt632", "Globos Amscan", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 321.51f, 36, "pv478");
 
-		Producto productoBD5 = new Producto (" ", "Paquete de Globos 4", "uuu", 150.00f, 67, "pv000");
+		Producto productoBD5 = new Producto ("pt478", "Globos Arco", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 150.00f, 17, "pv657");
 
 		inventario.add(productoBD1);
 		inventario.add(productoBD2);
@@ -63,8 +65,6 @@ public class ArrayListProductos {
 
 
 	}
-
-	// CREATE
 
 	public boolean agregarProducto (Producto productoNuevo) {
 

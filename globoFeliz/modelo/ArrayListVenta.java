@@ -57,8 +57,8 @@ public class ArrayListVenta {
 		ArrayList <String> listaIdProductos = new ArrayList <String> ();
 
 		listaIdProductos.add("pt000");
-		listaIdProductos.add("pt000");
-		listaIdProductos.add("pt000");		
+		listaIdProductos.add("pt125");
+		listaIdProductos.add("pt478");		
 
 
 		ventaBD = new Venta ("vt000", listaIdProductos, " ", " ", 0.0f);

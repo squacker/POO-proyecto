@@ -47,7 +47,7 @@ public class ArrayListAbastecimientos {
 
 	private void leerAbastecimientosBD() {
 
-		Abastecimiento abastecimientoBD = new Abastecimiento("ab000", "pt000", " ", " ", 2);
+		Abastecimiento abastecimientoBD = new Abastecimiento("ab000", "pt000", " ", " ", 6);
         
         abastecimientos.add(abastecimientoBD);
 

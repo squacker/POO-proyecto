@@ -187,7 +187,7 @@ public class IGUProductos {
 
                 descripcionNuevo = lector.nextLine();
 
-                if (descripcionNuevo.length() > 50) {
+                if (descripcionNuevo.length() > 100) {
 
                     throw new IllegalArgumentException("La descripcion debe tener menos de 50 caracteres.");
                 

@@ -8,54 +8,6 @@ import java.util.ArrayList;
 
 public class Venta {
 
-	// SUBCLASE (AMIGA)
-
-	public class ListaProductos  {
-
-		float calcularMontoTotal() {
-
-			float sumaPrecios = 0.0f;
-
-			for (int i = 0; i < listaIdProductos.size(); i++) {
-
-				float precioProducto = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getPrecioProducto();
-
-				sumaPrecios = sumaPrecios + precioProducto;
-
-			}
-
-			return sumaPrecios;
-
-		}
-
-		String imprimirVenta () {
-
-			String ventasEscritas = "";
-
-			for (int i = 0; i < listaIdProductos.size(); i++) {
-
-				String idProducto, nombreProducto;
-				float precioProducto;
-
-				idProducto = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getIdProducto();
-
-				nombreProducto = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getNombreProducto();
-				precioProducto = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getPrecioProducto();
-
-				ventasEscritas += "\nId: " + idProducto + "       " + 
-					   			  "Nombre: " + nombreProducto + "       " +  
-					   		      "Precio: " + precioProducto + "\n";
-
-			}
-
-				
-			return ventasEscritas;
-
-
-		}
-	
-		
-	}
 
 // ATRIBUTOS
 
@@ -73,8 +25,6 @@ public class Venta {
 	private String idVenta, horaVenta, fechaVenta;
 	
 	private float montoTotalVenta;
-
-	private ListaProductos productosVendidos = new ListaProductos();
 
 
 // CONSTRUCTORES
@@ -146,7 +96,7 @@ public class Venta {
 
 		if (monto == 0.0f) {
 
-			this.montoTotalVenta = productosVendidos.calcularMontoTotal();
+			this.montoTotalVenta = calcularMontoTotal();
 
 		} else {
 
@@ -185,7 +135,7 @@ public class Venta {
 		String datosVenta = "\nId: " + idVenta +
 								"\nHora: " + horaVenta +
 								"\nFecha: " + fechaVenta +
-								"\n\nProductos: \n" + productosVendidos.imprimirVenta() + "\n\n" +
+								"\n\nProductos: \n" + imprimirVenta() + "\n\n" +
 								"\nTotal: " + montoTotalVenta;
 
 		return datosVenta;
@@ -221,6 +171,49 @@ public class Venta {
 			inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).setExistenciasProducto(existencias);
 
 		}
+	}
+
+	
+	public float calcularMontoTotal() {
+
+		float sumaPrecios = 0.0f;
+
+		for (int i = 0; i < listaIdProductos.size(); i++) {
+
+			float precioProducto = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getPrecioProducto();
+
+			sumaPrecios = sumaPrecios + precioProducto;
+
+		}
+
+		return sumaPrecios;
+
+	}
+
+	public String imprimirVenta () {
+
+		String ventasEscritas = "";
+
+		for (int i = 0; i < listaIdProductos.size(); i++) {
+
+			String idProducto, nombreProducto;
+			float precioProducto;
+
+			idProducto = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getIdProducto();
+
+			nombreProducto = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getNombreProducto();
+			precioProducto = inventario.getInventario().get(inventario.buscarProducto(listaIdProductos.get(i))).getPrecioProducto();
+
+			ventasEscritas += "\nId: " + idProducto + "       " + 
+								 "Nombre: " + nombreProducto + "       " +  
+								 "Precio: " + precioProducto + "\n";
+
+		}
+
+			
+		return ventasEscritas;
+
+
 	}
 
 }

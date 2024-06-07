@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 public class IGUVentas {
 
+    // ATRIBUTOS
+
     ArrayListProductos inventario = new ArrayListProductos();
 
     private Scanner lector = new Scanner (System.in);

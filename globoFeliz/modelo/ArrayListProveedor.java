@@ -51,15 +51,15 @@ public class ArrayListProveedor{
 	private void leerProveedoresBD () {
 		
 
-		Proveedor proveedorBD1 = new Proveedor ("pv000", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorBD1 = new Proveedor ("pv000", "Provedor Uno", "5520528105", "proveedor1@gmail.com", "Emperadores 789, CDMX, México", "ABC1234567890");
 		
-		Proveedor proveedorBD2 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorBD2 = new Proveedor ("pv526", "Provedor Dos", "5559876543", "proveedor2@gmail.com", "Avenida Tezonco 456, CDMX, México", "DEF0987654321");
 
-		Proveedor proveedorBD3 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorBD3 = new Proveedor ("pv987", "Provedor Tres", "5556543210", "proveedor3@gmail.com", "Suiza 345, CDMX, México", "GHI1234567890");
 
-		Proveedor proveedorBD4 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorBD4 = new Proveedor ("pv478", "Provedor Cuatro", "5551234567 ", "proveedor4@gmail.com", "Porfirio Diaz 39, CDMX, Mexico", "BJK0341892398");
 
-		Proveedor proveedorBD5 = new Proveedor (" ", "Juan", "5520528105", "juaneio@hotmail.com", "oracle", "aomj020228ec3");
+		Proveedor proveedorBD5 = new Proveedor ("pv657", "Provedor Cinco", "5520053157", "proveedor5@gmail.com", "Calle Arneses 123, CDMX, Mexico", "ORC9085687457");
 
 
 		proveedores.add(proveedorBD1);
