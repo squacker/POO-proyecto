@@ -22,7 +22,7 @@ public class ArrayListProductos {
 	}
 
 	public ArrayListProductos (String db) {
-
+		
 		leerProductosBD();
 	}
 

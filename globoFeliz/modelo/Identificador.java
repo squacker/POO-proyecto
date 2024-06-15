@@ -28,7 +28,7 @@ public class Identificador {
         setTipoId(tipo); 
         setNumId();
     }
-
+    
 
 // SETTERS
 

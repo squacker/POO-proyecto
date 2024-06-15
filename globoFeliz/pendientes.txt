@@ -1,5 +1,13 @@
 
-    Implementar nivel maximo y minimo en la clase producto 
+meter interfaces para IGU, para DAO
 
-    Hacer que todos los switch funcionen con ennumerados 
+Hacer clase "Lista Producto" para absatecimiento y compra. AGREGACION
+
+Hacer que el abastecimiento sea de varios productos de un mismo proveedor
+
+Las ventas no se borran, se cancelan, se muestra el estado y se regresan las unidades al inventario
+
+Agregar funcion para listar ventas y abastecimientos cancelados
+
+Agregar funcion para agregar varias unidades por cada producto en venta y abastecimiento
 

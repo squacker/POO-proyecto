@@ -27,7 +27,7 @@ public class ArrayListVenta {
 	}
 
 	public ArrayListVenta (String db) {
-
+		
 		leerVentasBD();
 		
 	}
