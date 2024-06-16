@@ -13,7 +13,7 @@ public class Producto {
 
 	private Identificador identificador = new Identificador ("pt");
 
-	private String idProducto, idProveedorAsignado, nombreProducto, descripcionProducto;
+	private String idProducto, nombreProducto, descripcionProducto;
 
 	private int existenciasProducto, existenciasMinimas, existenciasMaximas;;
 
