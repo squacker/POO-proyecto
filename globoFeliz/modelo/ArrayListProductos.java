@@ -45,15 +45,15 @@ public class ArrayListProductos {
 
 	private void leerProductosBD () {
 
-		Producto productoBD1 = new Producto ("pt000", "Globos Payaso", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 115.41f, 35, "pv000");
+		Producto productoBD1 = new Producto ("pt000", "Globos Payaso", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 115.41f, 100.0f, 35, 5, 30);
 
-		Producto productoBD2 = new Producto ("pt125", "Globos Kalu", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 224.61f, 20, "pv526");
+		Producto productoBD2 = new Producto ("pt125", "Globos Kalu", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 224.61f, 100.0f, 20, 5, 30);
 
-		Producto productoBD3 = new Producto ("pt567", "Globos blogos", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 123.43f, 46, "pv987");
+		Producto productoBD3 = new Producto ("pt567", "Globos blogos", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 123.43f, 100.0f, 46, 5, 30);
 
-		Producto productoBD4 = new Producto ("pt632", "Globos Amscan", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 321.51f, 36, "pv478");
+		Producto productoBD4 = new Producto ("pt632", "Globos Amscan", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 321.51f, 100.0f, 36,  5, 30);
 
-		Producto productoBD5 = new Producto ("pt478", "Globos Arco", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 150.00f, 17, "pv657");
+		Producto productoBD5 = new Producto ("pt478", "Globos Arco", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do", 150.00f, 100.0f, 17, 5, 30);
 
 		inventario.add(productoBD1);
 		inventario.add(productoBD2);
@@ -157,6 +157,7 @@ public class ArrayListProductos {
 				Producto productoModificado = inventario.get(posicion);
 
 				switch (opcion) {
+					
 					case 1:
 						
 						 productoModificado.setNombreProducto(modificaCadena);
@@ -165,28 +166,39 @@ public class ArrayListProductos {
 				
 					case 2:
 						
-						productoModificado.setDescripcionProducto(modificaCadena);;
+						productoModificado.setDescripcionProducto(modificaCadena);
 
 					    break;	
 
 					case 3:
 						
-						productoModificado.setPrecioProducto(modificaPrecio);;
+						productoModificado.setPrecioProducto(modificaPrecio);
 
-					    break;	
+					    break;
 
 					case 4:
 						
-						productoModificado.setExistenciasProducto(modificaExistencias);;
+						productoModificado.setCostoProducto(modificaPrecio);
 
 					    break;	
 
 					case 5:
 						
-						productoModificado.setIdProveedorAsignado(modificaCadena);
-						productoModificado.setProveedorAsignado();
+						productoModificado.setExistenciasProducto(modificaExistencias);
 
 					    break;	
+
+					case 6:
+							
+						productoModificado.setExistenciasMinimas(modificaExistencias);
+	
+						break;		
+
+					case 7:
+								
+						productoModificado.setExistenciasMaximas(modificaExistencias);
+		
+						break;	
 					
 					default:
 						break;
@@ -226,14 +238,6 @@ public class ArrayListProductos {
 
 		}
 
-	}
-
-	public void setProveedorAsignado () {
-
-		for (Producto producto : inventario) {
-
-			producto.setProveedorAsignado();
-		}
 	}
 
 

@@ -32,7 +32,6 @@ public class GestionInventario {
 		do {
 
 			opcion = interfaz.menuInventario();
-			inventario.setProveedorAsignado();
 
 			// SWITCH MENU
 
@@ -112,24 +111,31 @@ public class GestionInventario {
 								
 								inventario.modificarProducto(id, opcionModificar, " ", nuevoPrecio, 0);
 		
-								break;	
+								break;
+
+							case 4: // MODIFICAR PRECIO
+								
+								nuevoPrecio = interfaz.leerCostoNuevo();
+								
+								inventario.modificarProducto(id, opcionModificar, " ", nuevoPrecio, 0);
 		
-							case 4: // MODIFICAR EXISTENCIAS
+								break;
+		
+							case 5: // MODIFICAR EXISTENCIAS
+								
+								
+							
+							case 6: // MODIFICAR EXISTENCIAS MINIMAS
+								
+								
+							
+							case 7: // MODIFICAR EXISTENCIAS MAXIMAS
 								
 								nuevoExistencias = interfaz.leerExistenciasNuevo();
 								
 								inventario.modificarProducto(id, opcionModificar, " ", 0.0f, nuevoExistencias);
 		
-								break;	
-
-							case 5: // MODIFICAR PROVEEDOR
-								
-								nuevaCadena = interfaz.leerIdProveedorAsignado();
-								
-								inventario.modificarProducto(id, opcionModificar, nuevaCadena, 0.0f, 0);
-		
-								break;	
-							
+								break;
 							
 							case 0: // CANCELAR
 

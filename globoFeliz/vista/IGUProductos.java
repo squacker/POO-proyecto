@@ -81,9 +81,13 @@ public class IGUProductos {
         
         nuevoProducto.setPrecioProducto(this.leerPrecioNuevo());
 
+        nuevoProducto.setCostoProducto(this.leerCostoNuevo());
+
         nuevoProducto.setExistenciasProducto(this.leerExistenciasNuevo());
 
-        nuevoProducto.setIdProveedorAsignado(this.leerIdProveedorAsignado());
+        nuevoProducto.setExistenciasMinimas(this.leerExistenciasNuevo());
+
+        nuevoProducto.setExistenciasMaximas(this.leerExistenciasNuevo());
 
         return nuevoProducto;
     }
@@ -110,7 +114,7 @@ public class IGUProductos {
 
             try {
 
-                System.out.printf("\n1. Nombre   2. Descripcion   3. Precio   4. Existencias   5. Proveedor   0. Cancelar\n\n¿Qué dato deseas modificar?: ");
+                System.out.printf("\n1. Nombre   2. Descripcion   3. Precio   4. Costo   5. Existencias   6. Existencias Minimas   7. Existencias Maximas  0. Cancelar\n\n¿Qué dato deseas modificar?: ");
 
                 opcionModificar = lector.nextInt();
 
@@ -118,7 +122,7 @@ public class IGUProductos {
 
                 if (opcionModificar < 0 || opcionModificar > 5) {
 
-                    throw new IllegalArgumentException("La opción debe estar entre 0 y 5.");
+                    throw new IllegalArgumentException("La opción debe estar entre 0 y 7.");
 
                 }
 
@@ -244,6 +248,44 @@ public class IGUProductos {
         return precioNuevo;
     }
 
+    public float leerCostoNuevo () {
+
+        float costoNuevo = 0.0f;
+        boolean datoValido = false;
+
+        do {
+
+            System.out.print("\nCosto: ");
+
+            try {
+
+                costoNuevo = lector.nextFloat();
+
+                if (costoNuevo < 1) {
+
+                    throw new IllegalArgumentException("El costo debe ser mayor a 0.");
+
+                }
+
+                datoValido = true;
+            
+            } catch (InputMismatchException exepcion) {
+                
+                System.out.println("Error: Debes ingresar un valor numérico.");
+                
+                this.limpiarBuffer();
+            
+            } catch (IllegalArgumentException exepcion) {
+                
+                System.out.println("Error: " + exepcion.getMessage());
+            
+            }
+        
+        } while (!datoValido);
+
+        return costoNuevo;
+    }
+
     public int leerExistenciasNuevo () {
         
         int existenciasNuevo = 0;
@@ -256,12 +298,6 @@ public class IGUProductos {
             try {
 
                 existenciasNuevo = lector.nextInt();
-
-                if (existenciasNuevo < 5 || existenciasNuevo > 50) {
-
-                    throw new IllegalArgumentException("Las existencias deben estar entre 5 y 50.");
-                
-                }
                                 
                 datoValido = true;
             
@@ -281,7 +317,7 @@ public class IGUProductos {
 
         return existenciasNuevo;
     }
-
+    
     public String leerIdProveedorAsignado () {
 
         String idProveedor;

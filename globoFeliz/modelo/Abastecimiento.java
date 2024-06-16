@@ -134,8 +134,7 @@ public class Abastecimiento {
                                 "\nHora: " + horaAbastecimiento +
                                 "\nFecha: " + fechaAbastecimiento +
                                 "\n\nProducto: " + inventario.getProducto(inventario.buscarProducto(idProducto)).getNombreProducto() +
-                                "\nUnidades: " + unidades +
-                                "\nProveedor: " + proveedores.getProveedores().get(proveedores.buscarProveedor(inventario.getProducto(inventario.buscarProducto(idProducto)).getIdProveedorAsignado())).getNombreProveedor();
+                                "\nUnidades: " + unidades;
 
         return datosAbastecimiento;
 

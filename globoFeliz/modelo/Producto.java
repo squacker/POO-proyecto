@@ -4,26 +4,22 @@ Clase: Producto
 
 package globoFeliz.modelo;
 
+import java.util.ArrayList;
+
 public class Producto {
 
-// CONSTANTES
-
-	// public final int EXISTENCIAS_MINIMAS = 5;
-	// public final int EXISTENCIAS_MAXIMAS = 50;
 
 // ATRIBUTOS
-
-	private ArrayListProveedor proveedores = new ArrayListProveedor();
 
 	private Identificador identificador = new Identificador ("pt");
 
 	private String idProducto, idProveedorAsignado, nombreProducto, descripcionProducto;
 
-	private int existenciasProducto;
+	private int existenciasProducto, existenciasMinimas, existenciasMaximas;;
 
-	private float precioProducto;
+	private float precioProducto, costoProducto;
 
-	private Proveedor proveedorAsignado;
+	private ArrayList <String> idProveedoresAsignados;
 
 	
 
@@ -39,14 +35,16 @@ public class Producto {
 
 	// Con parametros 
 
-	public Producto (String id, String nombre, String descripcion, float precio, int existencias, String idProveedor) {
+	public Producto (String id, String nombre, String descripcion, float precio, float costo, int existencias, int existenciasMin, int existenciasMax) {
 
 		setIdProducto(id);
 		setNombreProducto(nombre);
 		setDescripcionProducto(descripcion);
 		setPrecioProducto(precio);
+		setCostoProducto(costo);
 		setExistenciasProducto(existencias);
-		setIdProveedorAsignado(idProveedor);
+		setExistenciasMinimas(existenciasMin);
+		setExistenciasMaximas(existenciasMax);
 		
 	}
 
@@ -80,21 +78,29 @@ public class Producto {
 		this.precioProducto = precio; 
 	}
 
+	public void setCostoProducto (float costo) {
+
+		this.costoProducto = costo;
+	}
+
 	public void setExistenciasProducto (int existencias) {
 
 		this.existenciasProducto = existencias;
 	}
 
-	public void setIdProveedorAsignado (String idProveedor) {
+	public void setExistenciasMinimas (int existenciasMin) {
 
-		this.idProveedorAsignado = idProveedor;
+		this.existenciasMinimas = existenciasMin;
 	}
 
-	public void setProveedorAsignado() {
+	public void setExistenciasMaximas (int existenciasMax) {
 
-		this.proveedorAsignado = proveedores.getProveedor(proveedores.buscarProveedor(this.idProveedorAsignado));
+		this.existenciasMaximas = existenciasMax;
+	}
 
-	
+	public void setProveedorAsignado(String idProveedor) {
+
+		idProveedoresAsignados.add(idProveedor);
 	}
 
 
@@ -120,19 +126,34 @@ public class Producto {
 		return precioProducto;
 	}
 
+	public float getCostoProducto () {
+
+		return costoProducto;
+	}
+
 	public int getExistenciasProducto () {
 
 		return existenciasProducto;
 	}
 
-	public String getIdProveedorAsignado () {
+	public int getExistenciasMinimas () {
 
-		return idProveedorAsignado;
+		return existenciasMinimas;
 	}
 
-	public Proveedor getProveedorAsignado () {
+	public int getExistenciasMaximas () {
 
-		return proveedorAsignado;
+		return existenciasMaximas;
+	}
+
+	public String getProveedorAsignado (int posicion) {
+
+		return idProveedoresAsignados.get(posicion);
+	}
+
+	public ArrayList <String> getIdProveedoresAsignados () {
+
+		return idProveedoresAsignados;
 	}
 
 
@@ -140,12 +161,27 @@ public class Producto {
 
 	public String imprimirDatos () {
 
+		String idProveedores = "Sin proveedores asignados";
+
+		if (idProveedoresAsignados != null) {
+
+			idProveedores = "";
+
+			for (String id : idProveedoresAsignados) {
+
+				idProveedores += id + ", ";
+			}
+		}
+
 		String datosProducto = "\nId: " + idProducto +
 								"\nNombre: " + nombreProducto +
 								"\nDescripción: " + descripcionProducto +
 								"\nPrecio: " + precioProducto +
+								"\nCosto: " + costoProducto +
 								"\nExistencias: " + existenciasProducto +
-								"\nProveedor: " + proveedorAsignado.getNombreProveedor();
+								"\nExistencias Minimas: " + existenciasMinimas +
+								"\nExistencias Maximas: " + existenciasMaximas +
+								"\nProveedores: " + idProveedores;
 
 		return datosProducto;
 
