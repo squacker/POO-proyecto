@@ -13,6 +13,8 @@ public class GestionInventario {
 
 	private ArrayListProductos inventario = new ArrayListProductos("db"); // MODELO
 
+	private ArrayListProveedor proveedores = new ArrayListProveedor(); // MODELO
+
 	private IGUProductos interfaz = new IGUProductos(); // VISTA
 
 	
@@ -23,9 +25,10 @@ public class GestionInventario {
 
 		// VARIABLES AUXILIARES
 
-		String id;
+		String id, idProveedor;
 		int opcion;
 		Producto productoNuevo;
+		
 
 		// CONTROLADOR DE MENU PRINCIPAL
 
@@ -37,8 +40,6 @@ public class GestionInventario {
 
 			switch (opcion) {
 
-
-				
 
 				case 1: // AGREGAR (CREATE)
 
@@ -191,6 +192,71 @@ public class GestionInventario {
 					break;
 				
 				
+				case 7: // ASOCIAR PROVEEDOR A PRODUCTO
+
+					id = interfaz.leerIdProducto();
+
+					if (inventario.buscarProducto(id) == -1) {
+
+						interfaz.mensaje("El id del producto que ingresaste no existe");
+
+					} else {
+
+						
+						idProveedor = interfaz.leerIdProveedorAsignado();
+					
+						if (proveedores.buscarProveedor(idProveedor) == -1) {
+	
+							interfaz.mensaje("El id del proveedor que ingresaste no existe");
+						
+						} else {
+
+							if (inventario.asociarProveedor(id, idProveedor)) {
+
+								interfaz.mensaje("Operacion realizada correctamente");
+
+							} else {
+
+								interfaz.mensaje("Ocurrio un error");
+
+							}
+
+
+
+						}
+
+					}
+
+					break;
+
+				case 8: // DESASOCIAD PROVEEDOR A PRODUCTO
+						
+					id = interfaz.leerIdProducto();
+
+					if (inventario.buscarProducto(id) == -1) {
+
+						interfaz.mensaje("El id del producto que ingresaste no existe");
+
+					} else {
+
+						idProveedor = interfaz.leerIdProveedorAsignado();
+					
+						if (inventario.getInventario().get(inventario.buscarProducto(id)).getIdProveedoresAsignados().contains(idProveedor)) {
+
+							inventario.getInventario().get(inventario.buscarProducto(id)).getIdProveedoresAsignados().remove(idProveedor);
+							
+							interfaz.mensaje("Operacion realizada correctamente");
+
+						} else {
+
+							interfaz.mensaje("El id del proveedor que ingresaste no esta asociado al producto");
+
+						}
+
+					}
+
+					break;
+
 				case 0: // SALIR
 				
 					break;

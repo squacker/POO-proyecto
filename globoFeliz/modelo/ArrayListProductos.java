@@ -14,6 +14,7 @@ public class ArrayListProductos {
 
 	private static ArrayList <Producto> inventario = new ArrayList <Producto> ();
 
+	private ArrayListProveedor proveedores = new ArrayListProveedor();
 
 // CONSTRUCTOR 
 	
@@ -71,6 +72,42 @@ public class ArrayListProductos {
 		return inventario.add(productoNuevo);
 	}
 
+	public boolean  asociarProveedor (String idProducto, String idProveedor) {
+
+		Producto productoAsociado = getProducto(buscarProducto(idProducto));
+
+		Proveedor proveedorAsociado = proveedores.getProveedor(proveedores.buscarProveedor(idProveedor));
+
+		if (!productoAsociado.getIdProveedoresAsignados().contains(idProveedor)) {
+
+			productoAsociado.setProveedorAsignado(idProveedor);
+
+			proveedorAsociado.setProductoAsignado(idProducto);
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+		
+	}
+
+	public boolean eliminarProveedorAsociado (String idProducto, String idProveedor) {
+
+		Producto productoAsociado = getProducto(buscarProducto(idProducto));
+
+		if (!productoAsociado.getIdProveedoresAsignados().contains(idProveedor)) {
+
+            return productoAsociado.eliminarProveedorAsignado(idProveedor);
+
+		} else {
+
+			return false;
+		}
+
+
+	}
 
 	// READ
 

@@ -11,6 +11,8 @@ public class Producto {
 
 // ATRIBUTOS
 
+	ArrayListProveedor proveedores = new ArrayListProveedor();
+
 	private Identificador identificador = new Identificador ("pt");
 
 	private String idProducto, nombreProducto, descripcionProducto;
@@ -19,11 +21,11 @@ public class Producto {
 
 	private float precioProducto, costoProducto;
 
-	private ArrayList <String> idProveedoresAsignados;
+	private ArrayList <String> idProveedoresAsignados = new ArrayList <> ();
 
 	
 
-
+	
 // CONSTRUCTORES
 
 	// Sin parametros
@@ -101,7 +103,7 @@ public class Producto {
 	public void setProveedorAsignado(String idProveedor) {
 
 		idProveedoresAsignados.add(idProveedor);
-	}
+	} 
 
 
 // GETTERS
@@ -146,31 +148,79 @@ public class Producto {
 		return existenciasMaximas;
 	}
 
+	public ArrayList <String> getIdProveedoresAsignados () {
+
+		return idProveedoresAsignados;
+	}
+	
 	public String getProveedorAsignado (int posicion) {
 
 		return idProveedoresAsignados.get(posicion);
 	}
 
-	public ArrayList <String> getIdProveedoresAsignados () {
-
-		return idProveedoresAsignados;
-	}
-
 
 // METODOS 
+
+	public boolean eliminarProveedorAsignado (String idProveedor) {
+
+		if (idProveedoresAsignados.size() <= 0) {
+
+			return false;
+
+		} else {
+
+			int contador = 0;
+			boolean encontrado = false;
+
+
+			while ( (contador < idProveedoresAsignados.size()) && !encontrado ) {
+
+				String idArreglo = idProveedoresAsignados.get(contador);
+
+				if (!(idProveedor.equals(idArreglo))) {
+
+					contador++;
+
+				} else {
+
+					encontrado = true;
+				}
+			}
+
+			if (contador > -1) {
+
+				String idProveedorBorrado = idProveedoresAsignados.remove(contador);
+
+				Proveedor provedorAsignado = proveedores.getProveedor(proveedores.buscarProveedor(idProveedor));
+
+				provedorAsignado.eliminarProductoAsignado(idProducto);
+
+				return idProveedorBorrado != null;
+
+			} else {
+
+				return false;
+
+			}
+
+		}
+
+
+	}
 
 	public String imprimirDatos () {
 
 		String idProveedores = "Sin proveedores asignados";
 
-		if (idProveedoresAsignados != null) {
+		if (!idProveedoresAsignados.isEmpty()) {
 
 			idProveedores = "";
 
 			for (String id : idProveedoresAsignados) {
 
-				idProveedores += id + ", ";
+				idProveedores += "\n   " + id ;
 			}
+			
 		}
 
 		String datosProducto = "\nId: " + idProducto +

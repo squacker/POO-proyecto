@@ -4,14 +4,17 @@ Clase: Proveedor
 
 package globoFeliz.modelo;
 
+import java.util.ArrayList;
+
 public class Proveedor {
 
 // ATRIBUTOS
 
-
 	private Identificador identificador = new Identificador ("pv");
 
     private String idProveedor, nombreProveedor, telefonoProveedor, correoProveedor, direccionFiscal, rfcProveedor;
+
+    private ArrayList <String> idProductosAsignados = new ArrayList <String> () ;
 
 // CONSTRUCTOR 
 
@@ -81,6 +84,11 @@ public class Proveedor {
 
     }
 
+    public void setProductoAsignado (String idProducto) {
+
+        idProductosAsignados.add(idProducto);
+    }
+
 //GETTERS
 
     public String getIdProveedor(){
@@ -119,17 +127,69 @@ public class Proveedor {
 
     }
 
- 
+    public String getProductoAsignado (int posicion) {
+
+        return idProductosAsignados.get(posicion);
+    }
+    
+    public ArrayList <String> getIdProductosAsignados () {
+
+        return idProductosAsignados;
+    }
+
 // METODOS 
 
+
+    public boolean eliminarProductoAsignado (String idProducto) {
+
+
+            int contador = 0;
+            boolean encontrado = false;
+
+
+            while ( (contador < idProductosAsignados.size()) && !encontrado ) {
+
+                String idArreglo = idProductosAsignados.get(contador);
+
+                if (!(idProducto.equals(idArreglo))) {
+
+                    contador++;
+
+                } else {
+
+                    encontrado = true;
+                }
+            }
+
+
+            String idProductoBorrado = idProductosAsignados.remove(contador);
+
+            return idProductoBorrado != null;
+
+    }
+
     public String imprimirDatos () {
+
+        String idProductos = "Sin productos asignados";
+
+		if (!idProductosAsignados.isEmpty()) {
+
+			idProductos = "";
+
+			for (String id : idProductosAsignados) {
+
+				idProductos += "\n   " + id ;
+			}
+			
+		}
 
 		String datosProducto = "\nId: " + idProveedor +
 								"\nNombre: " + nombreProveedor +
 								"\nTeléfono: " + telefonoProveedor +
 								"\nCorreo electrino: " + correoProveedor +
                                 "\nDirreción Fiscal: " + direccionFiscal +
-								"\nRFC: " + rfcProveedor ;
+								"\nRFC: " + rfcProveedor + 
+                                "\nProductos: " + idProductos;
 
 		return datosProducto;
 

@@ -36,6 +36,8 @@ public class IGUProductos {
                 "4. Borrar\n" +
                 "5. Buscar\n" +
                 "6. Mostrar inventario\n" +
+                "7. Asociar proveedor\n" +
+                "8. Desasociar proveedor\n" +
                 "0. Salir\n");
 
         do {
@@ -46,9 +48,9 @@ public class IGUProductos {
 
                 opcion = Integer.parseInt(lector.nextLine());
 
-                if (opcion < 0 || opcion > 6) {
+                if (opcion < 0 || opcion > 8) {
 
-                    throw new IllegalArgumentException("El valor debe estar entre 0 y 6.");
+                    throw new IllegalArgumentException("El valor debe estar entre 0 y 8.");
                 }
 
             } catch (NumberFormatException excepcion) {
@@ -64,7 +66,7 @@ public class IGUProductos {
                 opcion = -1;
             }
 
-        } while (opcion < 0 || opcion > 6);
+        } while (opcion < 0 || opcion > 8);
 
         return opcion;
     }
@@ -323,8 +325,6 @@ public class IGUProductos {
         String idProveedor;
         boolean encontrado = false;
 
-        limpiarBuffer();
-        
         do {
 
             
